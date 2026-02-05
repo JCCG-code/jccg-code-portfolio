@@ -1,0 +1,40 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+.DS_Store
+
+# Documentation
+*.md
+!README.md
+
+# Tests
+tests
+*.test.ts
+*.spec.ts
+
+# CI/CD
+.github

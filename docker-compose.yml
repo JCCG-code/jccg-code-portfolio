@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: jccg-portfolio-db
+    restart: unless-stopped
+    ports:
+      - '${DB_PORT:-5432}:5432'
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${DB_USER} -d ${DB_NAME}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - portfolio_network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  portfolio_network:
+    driver: bridge

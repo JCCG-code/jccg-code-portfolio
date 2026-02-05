@@ -11,7 +11,12 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs -f postgres",
+    "db:restart": "docker compose restart postgres",
+    "db:clean": "docker compose down -v"
   },
   "dependencies": {
     "nuxt": "^4.3.0",
