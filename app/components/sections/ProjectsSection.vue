@@ -73,26 +73,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: clamp(1.5rem, 4vw, 2rem);
-
-    @include sm {
-      grid-template-columns: repeat(2, 1fr);
-      gap: clamp(1.25rem, 3vw, 1.75rem);
-    }
-
-    @include md {
-      grid-template-columns: repeat(2, 1fr);
-      gap: clamp(1.5rem, 3vw, 2rem);
-    }
-
-    @include lg {
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(1.5rem, 3vw, 2rem);
-    }
-
-    @include xl {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
   }
 
   .project-card-item {
@@ -108,6 +88,34 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @media (min-width: 640px) {
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1.25rem, 3vw, 1.75rem);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1.5rem, 3vw, 2rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .project-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 3vw, 2rem);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .project-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
   }
 </style>
