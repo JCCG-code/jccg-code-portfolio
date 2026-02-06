@@ -1,24 +1,49 @@
 <template>
   <section
     id="home"
-    class="hero-section">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="greeting">{{ t('hero.greeting') }}</h1>
+    class="hero">
+    <div class="hero-grid">
+      <!-- Left: Immediate action -->
+      <div class="hero-primary">
+        <span class="badge">Full Stack Developer</span>
+        <h1 class="name">Juan Carlos Cuadra</h1>
         <p class="hook">{{ t('hero.hook') }}</p>
-        <p class="subhook">{{ t('hero.subhook') }}</p>
 
-        <div class="cta-group">
+        <div class="actions">
           <button
-            class="btn btn-primary"
+            class="action-primary"
             @click="scrollToSection('projects')">
             {{ t('hero.cta_primary') }}
           </button>
           <button
-            class="btn btn-secondary"
+            class="action-secondary"
             @click="scrollToSection('contact')">
             {{ t('hero.cta_secondary') }}
           </button>
+        </div>
+      </div>
+
+      <!-- Right: Technical intro -->
+      <div class="hero-secondary">
+        <div class="tech-intro">
+          <span class="label">// Current stack</span>
+          <div class="stack-list">
+            <span class="stack-item">Vue 3</span>
+            <span class="stack-item">Nuxt 4</span>
+            <span class="stack-item">TypeScript</span>
+            <span class="stack-item">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="quick-metrics">
+          <div class="metric">
+            <span class="metric-value">2+</span>
+            <span class="metric-label">Years Experience</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">10+</span>
+            <span class="metric-label">Projects Delivered</span>
+          </div>
         </div>
       </div>
     </div>
@@ -30,111 +55,180 @@
   const { scrollToSection } = useScrollNavigation()
 </script>
 
-<style scoped>
-  .hero-section {
+<style lang="scss" scoped>
+  @use '~/assets/scss/utils/mixins' as *;
+
+  .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 2rem 1rem;
+    padding: var(--space-8) var(--space-4);
   }
 
-  .container {
+  .hero-grid {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
   }
 
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out;
+  .hero-primary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
   }
 
-  .greeting {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--color-text-primary);
+  .badge {
+    display: inline-block;
+    width: fit-content;
+    padding: var(--space-1) var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--font-xs);
+    color: hsl(var(--primary));
+    background: hsl(var(--primary) / 0.1);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    border-radius: var(--radius);
+    letter-spacing: 0.05em;
+  }
+
+  .name {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: hsl(var(--foreground));
+    letter-spacing: -0.02em;
   }
 
   .hook {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: var(--color-text-primary);
-  }
-
-  .subhook {
-    font-size: clamp(1.125rem, 3vw, 1.5rem);
-    color: var(--color-text-secondary);
-    margin-bottom: 3rem;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
     line-height: 1.6;
+    color: hsl(var(--muted-foreground));
+    max-width: 32rem;
   }
 
-  .cta-group {
+  .actions {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+    gap: var(--space-3);
+    margin-top: var(--space-2);
 
-  .btn {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    min-width: 160px;
-  }
-
-  .btn-primary {
-    background: var(--color-primary);
-    color: white;
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--color-text-primary);
-    border: 2px solid var(--color-border);
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-    transform: translateY(-2px);
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .cta-group {
+    @include mobile {
       flex-direction: column;
-      align-items: stretch;
     }
+  }
 
-    .btn {
-      width: 100%;
+  .action-primary,
+  .action-secondary {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-base);
+    font-weight: 600;
+    border-radius: var(--radius);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: var(--shadow-focus);
     }
+  }
+
+  .action-primary {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+
+    &:hover {
+      background: hsl(var(--primary) / 0.9);
+      box-shadow: var(--shadow-hover);
+    }
+  }
+
+  .action-secondary {
+    background: transparent;
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+
+    &:hover {
+      background: hsl(var(--accent));
+      border-color: hsl(var(--primary));
+    }
+  }
+
+  .hero-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    padding: var(--space-8);
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-lg);
+
+    @include mobile {
+      padding: var(--space-6);
+    }
+  }
+
+  .tech-intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: var(--font-sm);
+    color: hsl(var(--muted-foreground));
+  }
+
+  .stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .stack-item {
+    padding: var(--space-2) var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--font-sm);
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+  }
+
+  .quick-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    padding-top: var(--space-6);
+    border-top: 1px solid hsl(var(--border));
+  }
+
+  .metric {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .metric-value {
+    font-family: var(--font-mono);
+    font-size: var(--font-3xl);
+    font-weight: 700;
+    color: hsl(var(--primary));
+    line-height: 1;
+  }
+
+  .metric-label {
+    font-size: var(--font-xs);
+    color: hsl(var(--muted-foreground));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 </style>

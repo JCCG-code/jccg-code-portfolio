@@ -1,33 +1,43 @@
 /**
- * Dark Theme Colors
+ * Dark Theme - Terminal at Night
+ * Deep code editor darkness with monitor glow
  */
 
 [data-theme='dark'] {
-  --background: 222.2 84% 4.9%;
+  /* Deep terminal background */
+  --background: 220 13% 9%;
+  /* Soft white text */
   --foreground: 210 40% 98%;
 
-  --card: 222.2 84% 4.9%;
+  /* Elevated surface - slightly lighter */
+  --card: 220 13% 12%;
   --card-foreground: 210 40% 98%;
 
-  --popover: 222.2 84% 4.9%;
+  --popover: 220 13% 12%;
   --popover-foreground: 210 40% 98%;
 
-  --primary: 217.2 91.2% 59.8%;
-  --primary-foreground: 222.2 47.4% 11.2%;
+  /* Monitor blue - brighter in dark */
+  --primary: 217 91% 65%;
+  --primary-foreground: 220 13% 9%;
 
-  --secondary: 217.2 32.6% 17.5%;
+  /* Subtle secondary */
+  --secondary: 220 13% 18%;
   --secondary-foreground: 210 40% 98%;
 
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
+  /* Muted elements */
+  --muted: 220 13% 18%;
+  --muted-foreground: 220 9% 65%;
 
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
+  /* Accent hover */
+  --accent: 220 13% 18%;
+  --accent-foreground: 217 91% 65%;
 
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
+  /* Destructive adjusted for dark */
+  --destructive: 0 84% 65%;
+  --destructive-foreground: 220 13% 9%;
 
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 224.3 76.3% 48%;
+  /* Subtle borders in dark */
+  --border: 220 9% 46% / 0.15;
+  --input: 220 9% 46% / 0.15;
+  --ring: 217 91% 65%;
 }

@@ -1,18 +1,15 @@
 /**
- * Typography Styles
+ * Typography - Code Terminal Meets Notebook
+ * Sans for narrative, mono for technical precision
  */
 
 body {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  color: var(--foreground);
+  font-family: var(--font-sans);
+  color: hsl(var(--foreground));
+  font-size: var(--font-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -64,10 +61,30 @@ a {
   }
 }
 
-code {
-  font-family: 'Courier New', monospace;
-  background: var(--muted);
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
+code,
+pre {
+  font-family: var(--font-mono);
   font-size: 0.875em;
+}
+
+code {
+  background: hsl(var(--muted));
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+}
+
+pre {
+  background: hsl(var(--card));
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border: none;
 }
