@@ -220,7 +220,7 @@
     width: 100%;
     max-height: 60vh;
     overflow: hidden;
-    background: var(--color-background);
+    background: hsl(var(--background));
   }
 
   .hero-image {
@@ -242,46 +242,46 @@
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   h2 {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 700;
     margin-bottom: 2rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   h3 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   h4 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   p {
     font-size: 1.125rem;
     line-height: 1.8;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     margin-bottom: 1rem;
   }
 
   .cs-overview {
-    background: var(--color-surface);
+    background: hsl(var(--card));
   }
 
   .lead {
     font-size: 1.375rem;
     line-height: 1.7;
     margin-bottom: 2rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   .meta {
@@ -289,9 +289,9 @@
     flex-wrap: wrap;
     gap: 2rem;
     padding: 1.5rem;
-    background: var(--color-background);
+    background: hsl(var(--background));
     border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid hsl(var(--border));
   }
 
   .meta-item {
@@ -303,18 +303,18 @@
   .meta-item strong {
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
   .meta-item span {
     font-size: 1rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   .cs-challenge {
-    background: var(--color-background);
+    background: hsl(var(--background));
   }
 
   .cs-contributions ul,
@@ -334,7 +334,7 @@
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--color-primary);
+    color: hsl(var(--primary));
     font-weight: 700;
     font-size: 1.25rem;
   }
@@ -343,13 +343,13 @@
     content: '→';
     position: absolute;
     left: 0;
-    color: var(--color-primary);
+    color: hsl(var(--primary));
     font-weight: 700;
     font-size: 1.25rem;
   }
 
   .cs-process {
-    background: var(--color-background);
+    background: hsl(var(--background));
   }
 
   .process-steps {
@@ -365,7 +365,7 @@
   }
 
   .cs-decisions {
-    background: var(--color-surface);
+    background: hsl(var(--card));
   }
 
   .decision-cards {
@@ -375,14 +375,14 @@
 
   .decision-card {
     padding: 1.5rem;
-    background: var(--color-background);
-    border: 1px solid var(--color-border);
+    background: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
     border-radius: 0.5rem;
-    border-left: 4px solid var(--color-primary);
+    border-left: 4px solid hsl(var(--primary));
   }
 
   .cs-results {
-    background: var(--color-background);
+    background: hsl(var(--background));
   }
 
   .metrics-grid {
@@ -397,25 +397,25 @@
     align-items: center;
     text-align: center;
     padding: 2rem;
-    background: var(--color-surface);
+    background: hsl(var(--card));
     border-radius: 0.5rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid hsl(var(--border));
   }
 
   .metric .value {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: hsl(var(--primary));
     margin-bottom: 0.5rem;
   }
 
   .metric .label {
     font-size: 1rem;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
   }
 
   .cs-links {
-    background: var(--color-surface);
+    background: hsl(var(--card));
   }
 
   .link-buttons {
@@ -437,7 +437,7 @@
   }
 
   .btn-primary {
-    background: var(--color-primary);
+    background: hsl(var(--primary));
     color: white;
   }
 
@@ -448,18 +448,18 @@
 
   .btn-secondary {
     background: transparent;
-    color: var(--color-text-primary);
-    border: 2px solid var(--color-border);
+    color: hsl(var(--foreground));
+    border: 2px solid hsl(var(--border));
   }
 
   .btn-secondary:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
     transform: translateY(-2px);
   }
 
   .cs-navigation {
-    background: var(--color-background);
+    background: hsl(var(--background));
   }
 
   .cs-navigation .container {
@@ -474,14 +474,14 @@
   .next-link {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
     text-decoration: none;
     transition: color 0.2s ease;
   }
 
   .back-link:hover,
   .next-link:hover {
-    color: var(--color-primary);
+    color: hsl(var(--primary));
   }
 
   @media (max-width: 640px) {

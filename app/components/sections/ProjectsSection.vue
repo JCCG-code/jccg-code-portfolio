@@ -41,7 +41,7 @@
 <style scoped>
   .projects-section {
     padding: 6rem 1rem;
-    background: var(--color-background);
+    background: hsl(var(--background));
   }
 
   .container {
@@ -54,13 +54,13 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 1rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   .subtitle {
     font-size: 1.25rem;
     text-align: center;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     margin-bottom: 4rem;
   }
 

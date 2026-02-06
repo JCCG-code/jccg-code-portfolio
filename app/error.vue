@@ -107,7 +107,7 @@
 
   .error-message {
     font-size: 1.25rem;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     margin-bottom: 2rem;
     line-height: 1.6;
   }
@@ -142,12 +142,12 @@
 
   .btn-secondary {
     background-color: var(--color-bg-secondary);
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-border);
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
   }
 
   .btn-secondary:hover {
-    background-color: var(--color-border);
+    background-color: hsl(var(--border));
     transform: translateY(-2px);
   }
 
@@ -155,7 +155,7 @@
     margin-top: 2rem;
     text-align: left;
     background-color: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
+    border: 1px solid hsl(var(--border));
     border-radius: 0.5rem;
     padding: 1rem;
   }
@@ -170,7 +170,7 @@
   .error-details pre {
     overflow-x: auto;
     font-size: 0.875rem;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     white-space: pre-wrap;
     word-wrap: break-word;
   }

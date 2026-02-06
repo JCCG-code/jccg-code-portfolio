@@ -1,6 +1,6 @@
 <template>
   <header :class="['app-header', { scrolled: isScrolled, hidden: isHidden }]">
-    <div class="container">
+    <div class="header-container">
       <div class="brand">JCCG Code</div>
 
       <nav class="desktop-nav">
@@ -79,79 +79,91 @@
   })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @use '~/assets/scss/utils/mixins' as *;
+
   .app-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    transition: all 0.3s ease;
+    z-index: var(--z-sticky);
+    padding: var(--space-4) 0;
+    transition: all var(--transition-base);
     background: transparent;
   }
 
   .app-header.scrolled {
-    background: var(--color-surface);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: hsl(var(--card) / 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--border));
   }
 
   .app-header.hidden {
     transform: translateY(-100%);
   }
 
-  .container {
+  .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 var(--space-4);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: var(--space-8);
   }
 
   .brand {
-    font-size: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: var(--font-lg);
     font-weight: 700;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
+    letter-spacing: -0.02em;
   }
 
   .desktop-nav {
     display: flex;
-    gap: 2rem;
+    gap: var(--space-6);
+    flex: 1;
+    justify-content: center;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   .desktop-nav a {
-    font-size: 1rem;
+    font-size: var(--font-sm);
     font-weight: 500;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    transition: color 0.2s ease;
-  }
+    transition: color var(--transition-fast);
+    padding: var(--space-2) 0;
 
-  .desktop-nav a:hover {
-    color: var(--color-text-primary);
-  }
+    &:hover {
+      color: hsl(var(--foreground));
+    }
 
-  .desktop-nav a.active {
-    color: var(--color-primary);
-  }
+    &.active {
+      color: hsl(var(--primary));
+    }
 
-  .desktop-nav a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--color-primary);
+    &.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: hsl(var(--primary));
+    }
   }
 
   .controls {
     display: flex;
-    gap: 0.5rem;
+    gap: var(--space-2);
     align-items: center;
   }
 
@@ -160,104 +172,92 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: var(--space-2);
+
+    @include tablet {
+      display: block;
+    }
   }
 
   .hamburger {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--color-text-primary);
+    background: hsl(var(--foreground));
     position: relative;
-    transition: background 0.3s ease;
-  }
+    transition: background var(--transition-base);
 
-  .hamburger::before,
-  .hamburger::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background: var(--color-text-primary);
-    transition: all 0.3s ease;
-  }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      background: hsl(var(--foreground));
+      transition: all var(--transition-base);
+    }
 
-  .hamburger::before {
-    top: -8px;
-  }
+    &::before {
+      top: -8px;
+    }
 
-  .hamburger::after {
-    bottom: -8px;
-  }
+    &::after {
+      bottom: -8px;
+    }
 
-  .hamburger.open {
-    background: transparent;
-  }
+    &.open {
+      background: transparent;
 
-  .hamburger.open::before {
-    top: 0;
-    transform: rotate(45deg);
-  }
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
 
-  .hamburger.open::after {
-    bottom: 0;
-    transform: rotate(-45deg);
+      &::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
   }
 
   .mobile-menu {
-    background: var(--color-surface);
-    border-top: 1px solid var(--color-border);
-    padding: 1rem 0;
-  }
+    background: hsl(var(--card));
+    border-top: 1px solid hsl(var(--border));
+    padding: var(--space-4) 0;
 
-  .mobile-menu nav {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0 1rem;
-  }
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      padding: 0 var(--space-4);
+    }
 
-  .mobile-menu a {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    cursor: pointer;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.2s ease;
-  }
+    a {
+      font-size: var(--font-base);
+      font-weight: 500;
+      color: hsl(var(--muted-foreground));
+      text-decoration: none;
+      cursor: pointer;
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius);
+      transition: all var(--transition-fast);
 
-  .mobile-menu a:hover,
-  .mobile-menu a.active {
-    background: var(--color-background);
-    color: var(--color-primary);
+      &:hover,
+      &.active {
+        background: hsl(var(--accent));
+        color: hsl(var(--primary));
+      }
+    }
   }
 
   .slide-down-enter-active,
   .slide-down-leave-active {
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
   }
 
   .slide-down-enter-from,
   .slide-down-leave-to {
     opacity: 0;
     transform: translateY(-10px);
-  }
-
-  @media (max-width: 768px) {
-    .desktop-nav {
-      display: none;
-    }
-
-    .mobile-menu-toggle {
-      display: block;
-    }
-  }
-
-  @media (min-width: 769px) {
-    .mobile-menu {
-      display: none;
-    }
   }
 </style>

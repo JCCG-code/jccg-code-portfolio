@@ -41,11 +41,13 @@
   const currentYear = new Date().getFullYear()
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @use '~/assets/scss/utils/mixins' as *;
+
   .app-footer {
-    padding: 3rem 1rem;
-    background: var(--color-surface);
-    border-top: 1px solid var(--color-border);
+    padding: var(--space-12) var(--space-4);
+    background: hsl(var(--card));
+    border-top: 1px solid hsl(var(--border));
   }
 
   .container {
@@ -56,51 +58,52 @@
   .footer-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--space-8);
     align-items: center;
   }
 
   .social-links {
     display: flex;
-    gap: 2rem;
+    gap: var(--space-8);
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .social-links a {
-    font-size: 1rem;
+    font-family: var(--font-mono);
+    font-size: var(--font-sm);
     font-weight: 500;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     text-decoration: none;
-    transition: color 0.2s ease;
-  }
+    transition: color var(--transition-fast);
 
-  .social-links a:hover {
-    color: var(--color-primary);
+    &:hover {
+      color: hsl(var(--primary));
+    }
   }
 
   .copyright {
     text-align: center;
-  }
 
-  .copyright p {
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-    margin: 0.25rem 0;
+    p {
+      font-size: var(--font-sm);
+      color: hsl(var(--muted-foreground));
+      margin: var(--space-1) 0;
+    }
   }
 
   .built-with {
-    font-size: 0.8125rem;
+    font-size: var(--font-xs);
     opacity: 0.8;
   }
 
-  @media (max-width: 640px) {
+  @include mobile {
     .app-footer {
-      padding: 2rem 1rem;
+      padding: var(--space-8) var(--space-4);
     }
 
     .social-links {
-      gap: 1rem;
+      gap: var(--space-4);
     }
   }
 </style>

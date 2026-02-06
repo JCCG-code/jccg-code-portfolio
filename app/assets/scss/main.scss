@@ -19,13 +19,6 @@
 
 // Layouts
 @use './layouts/app';
-@use './layouts/header';
-@use './layouts/footer';
-
-// Components
-@use './components/buttons';
-@use './components/cards';
-@use './components/forms';
 
 // Tailwind directives (must come after @use rules)
 @tailwind base;

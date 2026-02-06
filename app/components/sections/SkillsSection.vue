@@ -55,7 +55,7 @@
 <style scoped>
   .skills-section {
     padding: 6rem 1rem;
-    background: var(--color-background);
+    background: hsl(var(--background));
   }
 
   .container {
@@ -68,7 +68,7 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 4rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   .skill-categories {
@@ -90,7 +90,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
     text-align: center;
   }
 
@@ -102,15 +102,15 @@
 
   .tech-item {
     padding: 0.75rem 1rem;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
     border-radius: 0.5rem;
     text-align: center;
     transition: all 0.2s ease;
   }
 
   .tech-item:hover {
-    border-color: var(--color-primary);
+    border-color: hsl(var(--primary));
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -118,7 +118,7 @@
   .tech-item span {
     font-size: 0.9375rem;
     font-weight: 500;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   @keyframes fadeInUp {

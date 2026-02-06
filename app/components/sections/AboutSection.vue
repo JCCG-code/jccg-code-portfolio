@@ -55,7 +55,7 @@
 <style scoped>
   .about-section {
     padding: 6rem 1rem;
-    background: var(--color-surface);
+    background: hsl(var(--card));
   }
 
   .container {
@@ -68,7 +68,7 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 4rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   .about-grid {
@@ -89,7 +89,7 @@
   .story p {
     font-size: 1.125rem;
     line-height: 1.8;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     margin-bottom: 1.5rem;
   }
 
@@ -97,7 +97,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   .strengths ul {
@@ -109,7 +109,7 @@
   .strengths li {
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     margin-bottom: 1rem;
     padding-left: 1.5rem;
     position: relative;
@@ -119,7 +119,7 @@
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--color-primary);
+    color: hsl(var(--primary));
     font-weight: 700;
   }
 
@@ -130,7 +130,7 @@
   .download-cv {
     display: inline-block;
     padding: 1rem 2rem;
-    background: var(--color-primary);
+    background: hsl(var(--primary));
     color: white;
     font-size: 1.125rem;
     font-weight: 600;

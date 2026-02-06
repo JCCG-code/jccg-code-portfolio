@@ -50,7 +50,7 @@
 <style scoped>
   .contact-section {
     padding: 6rem 1rem;
-    background: var(--color-surface);
+    background: hsl(var(--card));
   }
 
   .container {
@@ -71,12 +71,12 @@
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
   }
 
   .cta-text {
     font-size: 1.25rem;
-    color: var(--color-text-secondary);
+    color: hsl(var(--muted-foreground));
     margin-bottom: 3rem;
     line-height: 1.6;
   }
@@ -100,7 +100,7 @@
   }
 
   .contact-btn.primary {
-    background: var(--color-primary);
+    background: hsl(var(--primary));
     color: white;
   }
 
@@ -111,13 +111,13 @@
 
   .contact-btn.secondary {
     background: transparent;
-    color: var(--color-text-primary);
-    border: 2px solid var(--color-border);
+    color: hsl(var(--foreground));
+    border: 2px solid hsl(var(--border));
   }
 
   .contact-btn.secondary:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
     transform: translateY(-2px);
   }
 

@@ -44,7 +44,7 @@
       Arial,
       sans-serif;
     background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+    color: hsl(var(--foreground));
     line-height: 1.6;
     transition:
       background-color 0.3s ease,
