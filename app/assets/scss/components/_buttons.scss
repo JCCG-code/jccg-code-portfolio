@@ -2,6 +2,8 @@
  * Button Component Styles
  */
 
+@use '../utils/mixins' as *;
+
 .btn {
   display: inline-flex;
   align-items: center;

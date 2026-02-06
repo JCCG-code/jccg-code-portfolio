@@ -2,6 +2,8 @@
  * Header Layout Styles
  */
 
+@use '../utils/mixins' as *;
+
 .app-header {
   position: fixed;
   top: 0;

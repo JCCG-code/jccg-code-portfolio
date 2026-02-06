@@ -3,30 +3,31 @@
  * Imports all styles in correct order
  */
 
-// Tailwind directives
+// IMPORTANT: @use rules must come first in SASS
+// Base styles
+@use './base/reset';
+@use './base/typography';
+@use './base/variables';
+
+// Utilities (with * to make mixins/functions available globally)
+@use './utils/mixins' as *;
+@use './utils/functions' as *;
+
+// Theme
+@use './themes/light';
+@use './themes/dark';
+
+// Layouts
+@use './layouts/app';
+@use './layouts/header';
+@use './layouts/footer';
+
+// Components
+@use './components/buttons';
+@use './components/cards';
+@use './components/forms';
+
+// Tailwind directives (must come after @use rules)
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-// Base styles
-@import './base/reset';
-@import './base/typography';
-@import './base/variables';
-
-// Utilities
-@import './utils/mixins';
-@import './utils/functions';
-
-// Theme
-@import './themes/light';
-@import './themes/dark';
-
-// Layouts
-@import './layouts/app';
-@import './layouts/header';
-@import './layouts/footer';
-
-// Components
-@import './components/buttons';
-@import './components/cards';
-@import './components/forms';

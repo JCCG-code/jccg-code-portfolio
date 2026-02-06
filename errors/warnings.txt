@@ -1,0 +1,144 @@
+
+ WARN  Using postcss.config.js is not supported together with Nuxt. Use options.postcss instead. You can read more in https://nuxt.com/docs/4.x/api/nuxt-config#postcss.                                                                                   nuxt 10:57:03  
+
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:19
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+12 │ @import './base/reset';
+   │         ^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 12:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:19
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+13 │ @import './base/typography';
+   │         ^^^^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 13:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:19  
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+14 │ @import './base/variables';
+   │         ^^^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 14:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:19  
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import './utils/mixins';
+   │         ^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:19  
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import './utils/functions';
+   │         ^^^^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 18:9  root stylesheet
+Warning: 8 repetitive deprecation warnings omitted.                                                                                                                                                                                                             10:57:19
+Run in verbose mode to see all warnings.
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:20
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+12 │ @import './base/reset';
+   │         ^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 12:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:20
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+13 │ @import './base/typography';
+   │         ^^^^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 13:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:20  
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+14 │ @import './base/variables';
+   │         ^^^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 14:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:20  
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import './utils/mixins';
+   │         ^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:20  
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import './utils/functions';
+   │         ^^^^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 18:9  root stylesheet
+Warning: 8 repetitive deprecation warnings omitted.                                                                                                                                                                                                             10:57:20
+Run in verbose mode to see all warnings.
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:21
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+12 │ @import './base/reset';
+   │         ^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 12:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:21
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+13 │ @import './base/typography';
+   │         ^^^^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 13:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:21  
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+14 │ @import './base/variables';
+   │         ^^^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 14:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:21  
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import './utils/mixins';
+   │         ^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.                                                                                                                                                         10:57:21  
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import './utils/functions';
+   │         ^^^^^^^^^^^^^^^^^^^
+   ╵
+    app\assets\scss\main.scss 18:9  root stylesheet
+Warning: 8 repetitive deprecation warnings omitted.                                                                                                                                                                                                             10:57:21
+Run in verbose mode to see all warnings.

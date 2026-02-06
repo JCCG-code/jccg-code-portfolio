@@ -2,6 +2,8 @@
  * Form Component Styles
  */
 
+@use '../utils/mixins' as *;
+
 .form-group {
   margin-bottom: var(--space-lg);
 }

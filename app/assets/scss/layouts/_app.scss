@@ -2,6 +2,8 @@
  * App Layout Styles
  */
 
+@use '../utils/mixins' as *;
+
 .app-container {
   min-height: 100vh;
   background-color: hsl(var(--background));

@@ -197,6 +197,9 @@ const cardClass = cn(
 </template>
 
 <style lang="scss" scoped>
+  // Import mixins to use them in component
+  @use '~/assets/scss/utils/mixins' as *;
+
   .custom-card {
     background: hsl(var(--card));
     border: var(--border-width) solid hsl(var(--border));
