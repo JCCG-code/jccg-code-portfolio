@@ -1,0 +1,73 @@
+/**
+ * Button Component Styles
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: var(--radius);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: var(--border-width) solid transparent;
+  padding: var(--space-sm) var(--space-lg);
+
+  @include focus-visible;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.btn-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.btn-secondary {
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+
+  &:hover {
+    background: hsl(var(--secondary) / 0.8);
+  }
+}
+
+.btn-outline {
+  border-color: hsl(var(--border));
+  background: transparent;
+  color: hsl(var(--foreground));
+
+  &:hover {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: hsl(var(--foreground));
+
+  &:hover {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+}
+
+.btn-sm {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-xs);
+}
+
+.btn-lg {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-base);
+}

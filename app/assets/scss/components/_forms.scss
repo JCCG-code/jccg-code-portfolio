@@ -1,0 +1,61 @@
+/**
+ * Form Component Styles
+ */
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+  color: hsl(var(--foreground));
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-sm);
+  border: var(--border-width) solid hsl(var(--input));
+  border-radius: var(--radius);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: all var(--transition-fast);
+
+  @include focus-visible;
+
+  &:focus {
+    outline: none;
+    border-color: hsl(var(--ring));
+  }
+
+  &::placeholder {
+    color: hsl(var(--muted-foreground));
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-error {
+  color: hsl(var(--destructive));
+  font-size: var(--font-xs);
+  margin-top: var(--space-xs);
+}
+
+.form-help {
+  color: hsl(var(--muted-foreground));
+  font-size: var(--font-xs);
+  margin-top: var(--space-xs);
+}

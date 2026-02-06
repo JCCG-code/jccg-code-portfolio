@@ -1,0 +1,28 @@
+/**
+ * App Layout Styles
+ */
+
+.app-container {
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+
+  @include large-desktop {
+    max-width: 1400px;
+  }
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+
+  @include mobile {
+    padding: var(--space-xl) 0;
+  }
+}

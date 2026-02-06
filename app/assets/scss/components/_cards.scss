@@ -1,0 +1,44 @@
+/**
+ * Card Component Styles
+ */
+
+.card {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: var(--border-width) solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all var(--transition-base);
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.card-header {
+  padding: var(--space-lg);
+  border-bottom: var(--border-width) solid hsl(var(--border));
+
+  h3 {
+    font-size: var(--font-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+
+  p {
+    color: hsl(var(--muted-foreground));
+    font-size: var(--font-sm);
+    margin: 0;
+  }
+}
+
+.card-content {
+  padding: var(--space-lg);
+}
+
+.card-footer {
+  padding: var(--space-lg);
+  border-top: var(--border-width) solid hsl(var(--border));
+  background: hsl(var(--muted) / 0.5);
+}

@@ -30,6 +30,47 @@
 - Nunca hardcodear rutas locales de imágenes que no existan
 - Preferir URLs externas o placeholders para assets de demostración
 
+# Estilos (SCSS + Tailwind + shadcn)
+
+## Estructura
+
+- Todos los estilos SCSS en `app/assets/scss/`
+- Estructura organizada:
+  - `base/` - Reset, typography, variables
+  - `utils/` - Mixins, functions
+  - `themes/` - Light, dark themes
+  - `layouts/` - App, header, footer
+  - `components/` - Buttons, cards, forms, etc.
+
+## Reglas de Estilos
+
+### Prioridad de Uso
+
+1. **Tailwind classes** - Para utilidades simples (padding, margin, colors)
+2. **SCSS modules** - Para componentes complejos o estilos reutilizables
+3. **Scoped styles** - Solo cuando sea estrictamente necesario
+
+### shadcn Components
+
+- Usar Radix Vue para componentes base
+- Aplicar estilos con Tailwind + CSS variables
+- Componentes en `app/components/ui/`
+
+## Temas
+
+- Usar HSL colors con CSS variables
+- Soportar light y dark modes
+- Variables en `themes/_light.scss` y `themes/_dark.scss`
+- Cambio de tema mediante `[data-theme='dark']`
+
+## NO Hacer
+
+- ❌ No usar estilos inline
+- ❌ No mezclar CSS variables custom con las de shadcn
+- ❌ No duplicar estilos (usar mixins/extends)
+- ❌ No usar `!important` (excepto casos extremos)
+- ❌ No crear archivos SCSS fuera de `app/assets/scss/`
+
 # Reglas
 
 - Sigue el trabajo teniendo en cuenta: docs/PLAN_JCCGCode_Portfolio.md

@@ -103,5 +103,14 @@ export default defineNuxtConfig({
       path: '~/components',
       pathPrefix: false
     }
-  ]
+  ],
+
+  css: ['~/assets/scss/main.scss'],
+
+  postcss: {
+    plugins: {
+      '@tailwindcss/postcss': {},
+      autoprefixer: {}
+    }
+  }
 })

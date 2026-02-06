@@ -1,0 +1,23 @@
+/**
+ * SCSS Functions
+ */
+
+// Convert px to rem
+@function rem($px) {
+  @return calc($px / 16) * 1rem;
+}
+
+// Get spacing value
+@function spacing($multiplier: 1) {
+  @return calc(var(--space-md) * $multiplier);
+}
+
+// Lighten color (for HSL)
+@function lighten-hsl($color, $amount) {
+  @return adjust-color($color, $lightness: $amount);
+}
+
+// Darken color (for HSL)
+@function darken-hsl($color, $amount) {
+  @return adjust-color($color, $lightness: -$amount);
+}
