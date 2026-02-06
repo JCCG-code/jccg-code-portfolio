@@ -1,0 +1,25 @@
+ ERROR  [request error] [unhandled] [GET] http://localhost:3000/_nuxt/                                                                                                                                                                                                10:25:29  
+
+
+ℹ Error:
+
+ ⁃ at createError (C:/Users/jccua/Documents/My Apps/jccg-code-portfolio/node_modules/.pnpm/@nuxt+cli@3.32.0_cac@6.7.14_magicast@0.5.1/node_modules/@nuxt/cli/dist/dev-KB30iboK.mjs:54:14)
+
+   49 ┃         }
+   50 ┃  };
+   51 ┃  function createError(input) {
+   52 ┃         if (typeof input === "string") return new H3Error(input);
+   53 ┃         if (isError(input)) return input;
+ ❯ 54 ┃         const err = new H3Error(input.message ?? input.statusMessage ?? "", { cause: input.cause || input });
+   55 ┃         if (hasProp(input, "stack")) try {
+   56 ┃                 Object.defineProperty(err, "stack", { get() {
+   57 ┃                         return input.stack;
+   58 ┃                 } });
+   59 ┃         } catch {
+
+ ⁃ at NuxtDevServer.toNodeHandle (C:/Users/jccua/Documents/My Apps/jccg-code-portfolio/node_modules/.pnpm/@nuxt+cli@3.32.0_cac@6.7.14_magicast@0.5.1/node_modules/@nuxt/cli/dist/dev-KB30iboK.mjs:264:18)
+
+[CAUSE]
+{
+  status: 404,
+}

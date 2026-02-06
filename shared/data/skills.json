@@ -1,0 +1,36 @@
+[
+  {
+    "name": "frontend",
+    "items": [
+      { "name": "Vue 3" },
+      { "name": "Nuxt 4" },
+      { "name": "TypeScript" },
+      { "name": "JavaScript" },
+      { "name": "HTML5" },
+      { "name": "CSS3" },
+      { "name": "Tailwind CSS" },
+      { "name": "Vite" }
+    ]
+  },
+  {
+    "name": "backend",
+    "items": [
+      { "name": "Node.js" },
+      { "name": "PostgreSQL" },
+      { "name": "Redis" },
+      { "name": "Drizzle ORM" },
+      { "name": "RESTful APIs" },
+      { "name": "WebSockets" }
+    ]
+  },
+  {
+    "name": "devops",
+    "items": [
+      { "name": "Docker" },
+      { "name": "Git" },
+      { "name": "GitHub Actions" },
+      { "name": "Nginx" },
+      { "name": "Linux" }
+    ]
+  }
+]

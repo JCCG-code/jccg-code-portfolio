@@ -1,0 +1,300 @@
+[
+  {
+    "id": "1",
+    "slug": "ecommerce-performance-optimization",
+    "thumbnail": "https://picsum.photos/seed/ecommerce-thumb/800/600",
+    "heroImage": "https://picsum.photos/seed/ecommerce-hero/1920/1080",
+    "techStack": ["Vue 3", "Nuxt 3", "TypeScript", "PostgreSQL", "Redis"],
+    "metrics": [
+      {
+        "value": "65%",
+        "label": "faster page load"
+      },
+      {
+        "value": "23%",
+        "label": "increase in conversions"
+      }
+    ],
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/yourusername/project",
+    "featured": true,
+    "order": 1,
+    "status": "published",
+    "en": {
+      "title": "E-Commerce Performance Optimization",
+      "oneLiner": "Reduced page load time from 3.2s to 1.1s, increasing conversion rate by 23%",
+      "overview": "Rebuilt the frontend of a high-traffic e-commerce platform, implementing advanced performance optimizations and modern best practices. The project resulted in significantly improved user experience and measurable business impact.",
+      "challenge": "The existing e-commerce platform suffered from slow page loads (3.2s average), poor mobile performance, and declining conversion rates. The legacy codebase used outdated patterns and lacked proper code splitting.",
+      "role": "Lead Frontend Developer",
+      "timeline": "3 months",
+      "contributions": [
+        "Architected migration from Vue 2 to Vue 3 with TypeScript",
+        "Implemented code splitting and lazy loading strategies",
+        "Optimized images with responsive formats and CDN integration",
+        "Set up Redis caching layer for product data",
+        "Created comprehensive performance monitoring dashboard"
+      ],
+      "processSteps": [
+        {
+          "title": "Performance Audit",
+          "description": "Conducted thorough analysis using Lighthouse and Chrome DevTools to identify bottlenecks. Found that bundle size, unoptimized images, and lack of caching were primary issues."
+        },
+        {
+          "title": "Architecture Planning",
+          "description": "Designed new architecture leveraging Nuxt 3's hybrid rendering, component islands, and automatic code splitting. Planned migration strategy to minimize downtime."
+        },
+        {
+          "title": "Implementation",
+          "description": "Incrementally migrated features while maintaining backward compatibility. Implemented automated testing to prevent regressions."
+        },
+        {
+          "title": "Optimization & Monitoring",
+          "description": "Fine-tuned caching strategies, optimized critical rendering path, and set up real-user monitoring to track improvements."
+        }
+      ],
+      "keyDecisions": [
+        {
+          "title": "Nuxt 3 with Hybrid Rendering",
+          "rationale": "Chose Nuxt 3 for its built-in performance optimizations, hybrid rendering capabilities, and excellent developer experience. This allowed us to statically generate product pages while keeping dynamic features server-rendered."
+        },
+        {
+          "title": "Redis for Product Caching",
+          "rationale": "Implemented Redis caching layer to reduce database queries for frequently accessed product data. This dramatically improved response times for product listings and detail pages."
+        },
+        {
+          "title": "Progressive Migration Strategy",
+          "rationale": "Opted for incremental migration rather than big-bang rewrite to minimize risk and maintain business continuity. Each feature was migrated and tested independently."
+        }
+      ],
+      "results": [
+        {
+          "value": "65%",
+          "label": "reduction in page load time"
+        },
+        {
+          "value": "23%",
+          "label": "increase in conversion rate"
+        },
+        {
+          "value": "95+",
+          "label": "Lighthouse performance score"
+        },
+        {
+          "value": "50%",
+          "label": "reduction in bounce rate"
+        }
+      ],
+      "learnings": [
+        "Performance is a feature - even small improvements have measurable business impact",
+        "Progressive enhancement ensures reliability while modern features enhance experience",
+        "Real-user monitoring is essential for understanding actual user experience",
+        "Incremental migration reduces risk and allows for course correction"
+      ]
+    },
+    "es": {
+      "title": "Optimización de Rendimiento E-Commerce",
+      "oneLiner": "Reduje el tiempo de carga de 3.2s a 1.1s, aumentando la tasa de conversión en 23%",
+      "overview": "Reconstruí el frontend de una plataforma de e-commerce de alto tráfico, implementando optimizaciones avanzadas de rendimiento y mejores prácticas modernas. El proyecto resultó en una mejora significativa de la experiencia de usuario e impacto medible en el negocio.",
+      "challenge": "La plataforma de e-commerce existente sufría de cargas lentas (3.2s promedio), bajo rendimiento móvil y tasas de conversión en declive. El código legacy usaba patrones obsoletos y carecía de code splitting apropiado.",
+      "role": "Desarrollador Frontend Principal",
+      "timeline": "3 meses",
+      "contributions": [
+        "Arquitecté la migración de Vue 2 a Vue 3 con TypeScript",
+        "Implementé estrategias de code splitting y lazy loading",
+        "Optimicé imágenes con formatos responsivos e integración CDN",
+        "Configuré capa de caché Redis para datos de productos",
+        "Creé dashboard comprehensivo de monitoreo de rendimiento"
+      ],
+      "processSteps": [
+        {
+          "title": "Auditoría de Rendimiento",
+          "description": "Realicé análisis exhaustivo usando Lighthouse y Chrome DevTools para identificar cuellos de botella. Encontré que el tamaño del bundle, imágenes no optimizadas y falta de caché eran los problemas principales."
+        },
+        {
+          "title": "Planificación de Arquitectura",
+          "description": "Diseñé nueva arquitectura aprovechando el rendering híbrido de Nuxt 3, component islands y code splitting automático. Planeé estrategia de migración para minimizar tiempo de inactividad."
+        },
+        {
+          "title": "Implementación",
+          "description": "Migré features incrementalmente mientras mantenía compatibilidad hacia atrás. Implementé testing automatizado para prevenir regresiones."
+        },
+        {
+          "title": "Optimización y Monitoreo",
+          "description": "Afiné estrategias de caché, optimicé critical rendering path y configuré monitoreo de usuarios reales para rastrear mejoras."
+        }
+      ],
+      "keyDecisions": [
+        {
+          "title": "Nuxt 3 con Rendering Híbrido",
+          "rationale": "Elegí Nuxt 3 por sus optimizaciones de rendimiento integradas, capacidades de rendering híbrido y excelente experiencia de desarrollo. Esto nos permitió generar páginas de productos estáticamente mientras manteníamos features dinámicas server-rendered."
+        },
+        {
+          "title": "Redis para Caché de Productos",
+          "rationale": "Implementé capa de caché Redis para reducir queries a base de datos para datos de productos frecuentemente accedidos. Esto mejoró dramáticamente los tiempos de respuesta para listados y páginas de detalle."
+        },
+        {
+          "title": "Estrategia de Migración Progresiva",
+          "rationale": "Opté por migración incremental en lugar de reescritura completa para minimizar riesgo y mantener continuidad del negocio. Cada feature fue migrada y testeada independientemente."
+        }
+      ],
+      "results": [
+        {
+          "value": "65%",
+          "label": "reducción en tiempo de carga"
+        },
+        {
+          "value": "23%",
+          "label": "aumento en tasa de conversión"
+        },
+        {
+          "value": "95+",
+          "label": "score de rendimiento Lighthouse"
+        },
+        {
+          "value": "50%",
+          "label": "reducción en bounce rate"
+        }
+      ],
+      "learnings": [
+        "El rendimiento es una feature - incluso pequeñas mejoras tienen impacto medible en el negocio",
+        "Progressive enhancement asegura confiabilidad mientras features modernas mejoran la experiencia",
+        "El monitoreo de usuarios reales es esencial para entender la experiencia real del usuario",
+        "La migración incremental reduce riesgo y permite corrección de rumbo"
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "slug": "collaborative-task-manager",
+    "thumbnail": "https://picsum.photos/seed/taskmanager-thumb/800/600",
+    "heroImage": "https://picsum.photos/seed/taskmanager-hero/1920/1080",
+    "techStack": ["Vue 3", "Nuxt 4", "TypeScript", "PostgreSQL", "WebSockets"],
+    "metrics": [
+      {
+        "value": "10 hrs/week",
+        "label": "saved per team"
+      }
+    ],
+    "liveUrl": "https://example.com/taskmanager",
+    "githubUrl": "https://github.com/yourusername/taskmanager",
+    "featured": true,
+    "order": 2,
+    "status": "published",
+    "en": {
+      "title": "Collaborative Task Manager",
+      "oneLiner": "Built real-time collaboration tool saving teams 10 hours/week on project coordination",
+      "overview": "Developed a modern task management application with real-time collaboration features. The platform enables teams to coordinate projects efficiently with live updates, assignments, and progress tracking.",
+      "challenge": "Teams were using disparate tools for project management, leading to fragmented communication and duplicated effort. There was a need for a unified platform with real-time updates that could scale to support multiple concurrent users.",
+      "role": "Full-Stack Developer",
+      "timeline": "4 months",
+      "contributions": [
+        "Designed and implemented WebSocket-based real-time synchronization",
+        "Built type-safe API with Nuxt server routes and Drizzle ORM",
+        "Created reusable component library with accessibility standards",
+        "Implemented optimistic UI updates for responsive experience",
+        "Set up automated testing and CI/CD pipeline"
+      ],
+      "processSteps": [
+        {
+          "title": "Requirements Gathering",
+          "description": "Interviewed users to understand pain points with existing tools. Identified key features: real-time updates, drag-and-drop task organization, team assignments, and progress tracking."
+        },
+        {
+          "title": "Technical Architecture",
+          "description": "Chose Nuxt 4 for full-stack capabilities and WebSockets for real-time features. Designed database schema optimized for concurrent updates and conflict resolution."
+        },
+        {
+          "title": "Iterative Development",
+          "description": "Built core features in sprints, gathering user feedback after each iteration. This allowed us to refine UX and prioritize features based on actual usage patterns."
+        }
+      ],
+      "keyDecisions": [
+        {
+          "title": "WebSockets for Real-Time Sync",
+          "rationale": "Chose WebSockets over polling for true real-time bidirectional communication. This provides instant updates across all connected clients with minimal server overhead."
+        },
+        {
+          "title": "Optimistic UI Updates",
+          "rationale": "Implemented optimistic updates to provide immediate feedback while operations complete in background. This creates responsive feel even with network latency."
+        }
+      ],
+      "results": [
+        {
+          "value": "10 hrs/week",
+          "label": "saved per team on average"
+        },
+        {
+          "value": "40%",
+          "label": "reduction in missed deadlines"
+        },
+        {
+          "value": "500+",
+          "label": "active users"
+        }
+      ],
+      "learnings": [
+        "Real-time features dramatically improve collaboration experience",
+        "Optimistic updates are crucial for perceived performance",
+        "User feedback during development leads to better product-market fit"
+      ]
+    },
+    "es": {
+      "title": "Gestor de Tareas Colaborativo",
+      "oneLiner": "Construí herramienta de colaboración en tiempo real que ahorra 10 horas/semana a equipos",
+      "overview": "Desarrollé una aplicación moderna de gestión de tareas con features de colaboración en tiempo real. La plataforma permite a equipos coordinar proyectos eficientemente con actualizaciones en vivo, asignaciones y seguimiento de progreso.",
+      "challenge": "Los equipos usaban herramientas dispares para gestión de proyectos, llevando a comunicación fragmentada y esfuerzo duplicado. Había necesidad de una plataforma unificada con actualizaciones en tiempo real que pudiera escalar para soportar múltiples usuarios concurrentes.",
+      "role": "Desarrollador Full-Stack",
+      "timeline": "4 meses",
+      "contributions": [
+        "Diseñé e implementé sincronización en tiempo real basada en WebSockets",
+        "Construí API type-safe con server routes de Nuxt y Drizzle ORM",
+        "Creé librería de componentes reusables con estándares de accesibilidad",
+        "Implementé actualizaciones optimistas de UI para experiencia responsiva",
+        "Configuré testing automatizado y pipeline CI/CD"
+      ],
+      "processSteps": [
+        {
+          "title": "Recolección de Requisitos",
+          "description": "Entrevisté usuarios para entender puntos de dolor con herramientas existentes. Identifiqué features clave: actualizaciones en tiempo real, organización drag-and-drop de tareas, asignaciones de equipo y seguimiento de progreso."
+        },
+        {
+          "title": "Arquitectura Técnica",
+          "description": "Elegí Nuxt 4 por capacidades full-stack y WebSockets para features en tiempo real. Diseñé schema de base de datos optimizado para actualizaciones concurrentes y resolución de conflictos."
+        },
+        {
+          "title": "Desarrollo Iterativo",
+          "description": "Construí features core en sprints, recolectando feedback de usuarios después de cada iteración. Esto nos permitió refinar UX y priorizar features basado en patrones de uso reales."
+        }
+      ],
+      "keyDecisions": [
+        {
+          "title": "WebSockets para Sync en Tiempo Real",
+          "rationale": "Elegí WebSockets sobre polling para comunicación bidireccional verdaderamente en tiempo real. Esto provee actualizaciones instantáneas entre todos los clientes conectados con overhead mínimo del servidor."
+        },
+        {
+          "title": "Actualizaciones Optimistas de UI",
+          "rationale": "Implementé actualizaciones optimistas para proveer feedback inmediato mientras operaciones se completan en background. Esto crea sensación responsiva incluso con latencia de red."
+        }
+      ],
+      "results": [
+        {
+          "value": "10 hrs/semana",
+          "label": "ahorradas por equipo en promedio"
+        },
+        {
+          "value": "40%",
+          "label": "reducción en deadlines perdidos"
+        },
+        {
+          "value": "500+",
+          "label": "usuarios activos"
+        }
+      ],
+      "learnings": [
+        "Features en tiempo real mejoran dramáticamente la experiencia de colaboración",
+        "Actualizaciones optimistas son cruciales para rendimiento percibido",
+        "Feedback de usuarios durante desarrollo lleva a mejor product-market fit"
+      ]
+    }
+  }
+]

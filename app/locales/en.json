@@ -1,0 +1,91 @@
+{
+  "welcome": {
+    "title": "JCCG Code Portfolio",
+    "subtitle": "Welcome to the Demo",
+    "description": "This is a demo showcasing the i18n and theme system configuration."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "skills": "Skills",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Juan Carlos",
+    "hook": "I build web apps that users actually enjoy using",
+    "subhook": "Full-stack developer specializing in Vue, Nuxt, and TypeScript",
+    "cta_primary": "View My Work",
+    "cta_secondary": "Let's Talk"
+  },
+  "projects": {
+    "title": "Selected Work",
+    "subtitle": "Projects with real impact",
+    "view_case_study": "View Case Study",
+    "live_demo": "Live Demo",
+    "github": "View Code",
+    "filter_all": "All Projects",
+    "filter_web": "Web Apps",
+    "filter_oss": "Open Source"
+  },
+  "about": {
+    "title": "About Me",
+    "core_strengths": "Core Strengths",
+    "download_cv": "Download CV",
+    "intro": "I started coding because I wanted to build things that solve real problems. What began as curiosity turned into a passion for crafting web applications that are both powerful and delightful to use.",
+    "journey": "Over the years, I've worked on everything from high-traffic e-commerce platforms to real-time collaboration tools. I specialize in the Vue ecosystem and love working on performance optimization and user experience.",
+    "focus": "Right now, I'm focused on building modern web applications with Nuxt 4, TypeScript, and PostgreSQL. I'm particularly interested in performance optimization, developer experience, and creating tools that genuinely improve people's workflows.",
+    "strength_1": "Performance-focused development with measurable results",
+    "strength_2": "Full-stack expertise from database to UI",
+    "strength_3": "Strong TypeScript and modern JavaScript skills",
+    "strength_4": "User-centered design and accessibility",
+    "strength_5": "Clear communication and documentation"
+  },
+  "skills": {
+    "title": "Tech Stack",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps & Tools"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "cta": "Got a project in mind? Looking for a developer? Let's chat.",
+    "email": "Send Email"
+  },
+  "case_study": {
+    "overview": "Overview",
+    "challenge": "The Challenge",
+    "role": "My Contribution",
+    "process": "How I Approached It",
+    "decisions": "Technical Decisions",
+    "results": "Results",
+    "learnings": "What I Learned",
+    "back": "Back to Projects",
+    "next": "Next Project"
+  },
+  "footer": {
+    "copyright": "All rights reserved",
+    "built_with": "Built with Nuxt 4 + TypeScript",
+    "madeWith": "Made with"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "system": "System",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English",
+    "toggle": "Toggle language"
+  },
+  "error": {
+    "notFound": "The page you are looking for does not exist.",
+    "serverError": "An internal server error occurred.",
+    "unexpected": "An unexpected error occurred.",
+    "goHome": "Go to Home",
+    "tryAgain": "Try Again",
+    "details": "Error Details"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "welcome": {
+    "title": "JCCG Code Portfolio",
+    "subtitle": "Bienvenido al Demo",
+    "description": "Esta es una demostración del sistema de configuración de i18n y temas."
+  },
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Acerca de",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "menu": "Menú"
+  },
+  "hero": {
+    "greeting": "Hola, soy Juan Carlos",
+    "hook": "Construyo aplicaciones web que los usuarios realmente disfrutan usar",
+    "subhook": "Desarrollador full-stack especializado en Vue, Nuxt y TypeScript",
+    "cta_primary": "Ver Mi Trabajo",
+    "cta_secondary": "Hablemos"
+  },
+  "projects": {
+    "title": "Trabajo Destacado",
+    "subtitle": "Proyectos con impacto real",
+    "view_case_study": "Ver Caso de Estudio",
+    "live_demo": "Demo en Vivo",
+    "github": "Ver Código",
+    "filter_all": "Todos los Proyectos",
+    "filter_web": "Aplicaciones Web",
+    "filter_oss": "Código Abierto"
+  },
+  "about": {
+    "title": "Acerca de Mí",
+    "core_strengths": "Fortalezas Principales",
+    "download_cv": "Descargar CV",
+    "intro": "Empecé a programar porque quería construir cosas que resolvieran problemas reales. Lo que comenzó como curiosidad se convirtió en pasión por crear aplicaciones web que sean potentes y agradables de usar.",
+    "journey": "A lo largo de los años, he trabajado en todo, desde plataformas de e-commerce de alto tráfico hasta herramientas de colaboración en tiempo real. Me especializo en el ecosistema Vue y me encanta trabajar en optimización de rendimiento y experiencia de usuario.",
+    "focus": "Actualmente, me enfoco en construir aplicaciones web modernas con Nuxt 4, TypeScript y PostgreSQL. Me interesan particularmente la optimización de rendimiento, la experiencia de desarrollo y crear herramientas que realmente mejoren los flujos de trabajo de las personas.",
+    "strength_1": "Desarrollo enfocado en rendimiento con resultados medibles",
+    "strength_2": "Experiencia full-stack desde base de datos hasta UI",
+    "strength_3": "Habilidades sólidas en TypeScript y JavaScript moderno",
+    "strength_4": "Diseño centrado en el usuario y accesibilidad",
+    "strength_5": "Comunicación clara y documentación"
+  },
+  "skills": {
+    "title": "Stack Tecnológico",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps y Herramientas"
+  },
+  "contact": {
+    "title": "Trabajemos Juntos",
+    "cta": "¿Tienes un proyecto en mente? ¿Buscas un desarrollador? Hablemos.",
+    "email": "Enviar Email"
+  },
+  "case_study": {
+    "overview": "Resumen",
+    "challenge": "El Desafío",
+    "role": "Mi Contribución",
+    "process": "Cómo lo Abordé",
+    "decisions": "Decisiones Técnicas",
+    "results": "Resultados",
+    "learnings": "Lo que Aprendí",
+    "back": "Volver a Proyectos",
+    "next": "Siguiente Proyecto"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados",
+    "built_with": "Construido con Nuxt 4 + TypeScript",
+    "madeWith": "Hecho con"
+  },
+  "theme": {
+    "light": "Modo Claro",
+    "dark": "Modo Oscuro",
+    "system": "Sistema",
+    "toggle": "Cambiar tema"
+  },
+  "language": {
+    "es": "Español",
+    "en": "English",
+    "toggle": "Cambiar idioma"
+  },
+  "error": {
+    "notFound": "La página que buscas no existe.",
+    "serverError": "Ocurrió un error interno del servidor.",
+    "unexpected": "Ocurrió un error inesperado.",
+    "goHome": "Ir al Inicio",
+    "tryAgain": "Intentar de Nuevo",
+    "details": "Detalles del Error"
+  }
+}
