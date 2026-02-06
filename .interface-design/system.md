@@ -100,6 +100,18 @@ Technical precision over friendly roundness.
 }
 ```
 
+### Segmented Control Pattern (Toggles)
+
+Theme and locale toggles use segmented control pattern:
+
+- **Track:** Muted background with subtle border
+- **Options:** Monospace text labels showing all choices
+- **Indicator:** Background-colored pill that slides
+- **Active state:** Foreground color on text
+- **Transition:** Fast cubic-bezier for technical precision
+
+Used for: ThemeToggle (light/dark), LocaleToggle (en/es)
+
 ## Transitions
 
 Fast micro-interactions: **150ms cubic-bezier(0.4, 0, 0.2, 1)**
