@@ -142,23 +142,31 @@
     transition: all var(--transition-base);
     display: flex;
     flex-direction: column;
+    height: 100%;
 
-    &:hover {
-      border-color: hsl(var(--primary) / 0.3);
-      box-shadow: var(--shadow-hover);
+    @include sm {
+      &:hover {
+        border-color: hsl(var(--primary) / 0.3);
+        box-shadow: var(--shadow-hover);
+        transform: translateY(-4px);
 
-      .thumbnail {
-        transform: scale(1.02);
-      }
+        .thumbnail {
+          transform: scale(1.03);
+        }
 
-      .link-view {
-        color: hsl(var(--primary));
+        .link-view {
+          color: hsl(var(--primary));
+        }
       }
     }
 
     &:focus-visible {
-      outline: none;
-      box-shadow: var(--shadow-focus);
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: scale(0.98);
     }
   }
 
@@ -181,23 +189,24 @@
   }
 
   .content {
-    padding: var(--space-6);
+    padding: clamp(1rem, 3vw, 1.5rem);
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: clamp(0.75rem, 2vw, 1rem);
     flex: 1;
   }
 
   .title {
-    font-size: var(--font-xl);
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
     font-weight: 700;
     line-height: 1.3;
     color: hsl(var(--foreground));
     margin: 0;
+    word-break: break-word;
   }
 
   .one-liner {
-    font-size: var(--font-sm);
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
     line-height: 1.6;
     color: hsl(var(--muted-foreground));
     margin: 0;
@@ -206,8 +215,8 @@
   .metric-badges {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    padding: var(--space-4);
+    gap: clamp(0.625rem, 2vw, 0.75rem);
+    padding: clamp(0.875rem, 2.5vw, 1rem);
     background: hsl(var(--muted) / 0.3);
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
@@ -220,7 +229,7 @@
   }
 
   .badge-label {
-    font-size: var(--font-xs);
+    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
     font-family: var(--font-mono);
     color: hsl(var(--muted-foreground));
     text-transform: uppercase;
@@ -229,7 +238,7 @@
 
   .badge-progress {
     position: relative;
-    height: 24px;
+    height: clamp(20px, 3vw, 24px);
     background: hsl(var(--background));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
@@ -242,7 +251,7 @@
     left: var(--space-2);
     transform: translateY(-50%);
     font-family: var(--font-mono);
-    font-size: var(--font-sm);
+    font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
     font-weight: 700;
     color: hsl(var(--foreground));
     z-index: 2;
@@ -255,30 +264,31 @@
     height: 100%;
     background: hsl(var(--primary) / 0.15);
     border-right: 2px solid hsl(var(--primary));
-    transition: width var(--transition-base);
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2);
+    gap: clamp(0.375rem, 1.5vw, 0.5rem);
   }
 
   .tech-tag {
-    padding: var(--space-1) var(--space-3);
+    padding: clamp(0.25rem, 1vw, 0.375rem) clamp(0.625rem, 2vw, 0.75rem);
     font-family: var(--font-mono);
-    font-size: var(--font-xs);
+    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
     background: hsl(var(--background));
     color: hsl(var(--muted-foreground));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
     letter-spacing: 0.02em;
+    white-space: nowrap;
   }
 
   .tech-more {
-    padding: var(--space-1) var(--space-3);
+    padding: clamp(0.25rem, 1vw, 0.375rem) clamp(0.625rem, 2vw, 0.75rem);
     font-family: var(--font-mono);
-    font-size: var(--font-xs);
+    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
     color: hsl(var(--primary));
     background: hsl(var(--primary) / 0.1);
     border: 1px solid hsl(var(--primary) / 0.2);
@@ -289,49 +299,78 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-4);
+    gap: clamp(0.75rem, 2vw, 1rem);
     margin-top: auto;
-    padding-top: var(--space-4);
+    padding-top: clamp(0.875rem, 2.5vw, 1rem);
     border-top: 1px solid hsl(var(--border));
+    flex-wrap: wrap;
 
-    @include mobile {
+    @include max-sm {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: stretch;
+      gap: var(--space-3);
     }
   }
 
   .link-view {
-    font-size: var(--font-sm);
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
     font-weight: 600;
     color: hsl(var(--foreground));
     text-decoration: none;
     transition: color var(--transition-fast);
+    white-space: nowrap;
 
     &:hover {
       color: hsl(var(--primary));
+    }
+
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
+      border-radius: var(--radius);
     }
   }
 
   .external-links {
     display: flex;
-    gap: var(--space-2);
+    gap: clamp(0.5rem, 1.5vw, 0.625rem);
+    flex-wrap: wrap;
+
+    @include max-sm {
+      width: 100%;
+    }
   }
 
   .link-external {
-    padding: var(--space-1) var(--space-3);
+    padding: clamp(0.375rem, 1.5vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
     font-family: var(--font-mono);
-    font-size: var(--font-xs);
+    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
     color: hsl(var(--muted-foreground));
     background: transparent;
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
     text-decoration: none;
     transition: all var(--transition-fast);
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+
+    @include max-sm {
+      flex: 1;
+      min-height: 44px;
+    }
 
     &:hover {
       color: hsl(var(--primary));
       border-color: hsl(var(--primary));
       background: hsl(var(--primary) / 0.05);
+    }
+
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
     }
   }
 </style>

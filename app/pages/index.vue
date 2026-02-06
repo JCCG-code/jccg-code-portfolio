@@ -42,10 +42,13 @@
 
 <style scoped>
   .portfolio-page {
-    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
   }
 
   main {
-    padding-top: 60px;
+    padding-top: clamp(60px, 12vw, 80px);
+    flex: 1;
   }
 </style>

@@ -59,10 +59,15 @@
   @use '~/assets/scss/utils/mixins' as *;
 
   .hero {
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
-    padding: var(--space-8) var(--space-4);
+    padding: clamp(4rem, 10vh, 8rem) clamp(1rem, 4vw, 2rem);
+
+    @include max-md {
+      padding-top: clamp(6rem, 15vh, 8rem);
+      padding-bottom: clamp(3rem, 8vh, 4rem);
+    }
   }
 
   .hero-grid {
@@ -70,20 +75,29 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: var(--space-16);
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 6vw, 4rem);
     align-items: center;
 
-    @include tablet {
-      grid-template-columns: 1fr;
-      gap: var(--space-12);
+    @include md {
+      grid-template-columns: 1fr 0.9fr;
+      gap: clamp(2rem, 4vw, 3rem);
+    }
+
+    @include lg {
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(3rem, 6vw, 4rem);
     }
   }
 
   .hero-primary {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: clamp(1rem, 3vw, 1.5rem);
+
+    @include md {
+      gap: clamp(1.25rem, 3vw, 1.75rem);
+    }
   }
 
   .badge {
@@ -91,48 +105,70 @@
     width: fit-content;
     padding: var(--space-1) var(--space-3);
     font-family: var(--font-mono);
-    font-size: var(--font-xs);
+    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
     color: hsl(var(--primary));
     background: hsl(var(--primary) / 0.1);
     border: 1px solid hsl(var(--primary) / 0.2);
     border-radius: var(--radius);
     letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
   .name {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     font-weight: 700;
     line-height: 1.1;
     color: hsl(var(--foreground));
     letter-spacing: -0.02em;
+    word-break: break-word;
+
+    @include md {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+    }
   }
 
   .hook {
-    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-size: clamp(1rem, 2.5vw, 1.375rem);
     line-height: 1.6;
     color: hsl(var(--muted-foreground));
-    max-width: 32rem;
+    max-width: 36rem;
+
+    @include md {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+    }
   }
 
   .actions {
     display: flex;
-    gap: var(--space-3);
-    margin-top: var(--space-2);
+    gap: clamp(0.75rem, 2vw, 1rem);
+    margin-top: clamp(0.5rem, 2vw, 1rem);
+    flex-wrap: wrap;
 
-    @include mobile {
+    @include max-sm {
       flex-direction: column;
+      gap: var(--space-3);
     }
   }
 
   .action-primary,
   .action-secondary {
-    padding: var(--space-3) var(--space-6);
-    font-size: var(--font-base);
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(0.9375rem, 2vw, 1rem);
     font-weight: 600;
     border-radius: var(--radius);
     transition: all var(--transition-fast);
     cursor: pointer;
     border: none;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+
+    @include max-sm {
+      width: 100%;
+      min-height: 52px;
+    }
 
     &:focus-visible {
       outline: none;
@@ -164,71 +200,78 @@
   .hero-secondary {
     display: flex;
     flex-direction: column;
-    gap: var(--space-8);
-    padding: var(--space-8);
+    gap: clamp(1.5rem, 4vw, 2rem);
+    padding: clamp(1.5rem, 4vw, 2rem);
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius-lg);
 
-    @include mobile {
-      padding: var(--space-6);
+    @include md {
+      order: 2;
     }
   }
 
   .tech-intro {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: clamp(0.75rem, 2vw, 1rem);
   }
 
   .label {
     font-family: var(--font-mono);
-    font-size: var(--font-sm);
+    font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
     color: hsl(var(--muted-foreground));
   }
 
   .stack-list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2);
+    gap: clamp(0.5rem, 1.5vw, 0.625rem);
   }
 
   .stack-item {
-    padding: var(--space-2) var(--space-3);
+    padding: clamp(0.5rem, 1.5vw, 0.625rem) clamp(0.75rem, 2vw, 1rem);
     font-family: var(--font-mono);
-    font-size: var(--font-sm);
+    font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
     background: hsl(var(--muted));
     color: hsl(var(--foreground));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
+    white-space: nowrap;
   }
 
   .quick-metrics {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
-    padding-top: var(--space-6);
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1rem, 3vw, 1.5rem);
+    padding-top: clamp(1rem, 3vw, 1.5rem);
     border-top: 1px solid hsl(var(--border));
+
+    @include max-sm {
+      gap: 1.25rem;
+    }
   }
 
   .metric {
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
+    min-width: 0;
   }
 
   .metric-value {
     font-family: var(--font-mono);
-    font-size: var(--font-3xl);
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
     font-weight: 700;
     color: hsl(var(--primary));
     line-height: 1;
   }
 
   .metric-label {
-    font-size: var(--font-xs);
+    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
     color: hsl(var(--muted-foreground));
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    line-height: 1.3;
   }
 </style>

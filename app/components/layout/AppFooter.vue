@@ -45,7 +45,7 @@
   @use '~/assets/scss/utils/mixins' as *;
 
   .app-footer {
-    padding: var(--space-12) var(--space-4);
+    padding: clamp(3rem, 8vw, 4rem) clamp(1rem, 4vw, 2rem);
     background: hsl(var(--card));
     border-top: 1px solid hsl(var(--border));
   }
@@ -58,27 +58,39 @@
   .footer-content {
     display: flex;
     flex-direction: column;
-    gap: var(--space-8);
+    gap: clamp(1.5rem, 4vw, 2rem);
     align-items: center;
   }
 
   .social-links {
     display: flex;
-    gap: var(--space-8);
+    gap: clamp(1.5rem, 4vw, 2rem);
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
   }
 
   .social-links a {
     font-family: var(--font-mono);
-    font-size: var(--font-sm);
+    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
     font-weight: 500;
     color: hsl(var(--muted-foreground));
     text-decoration: none;
     transition: color var(--transition-fast);
+    padding: var(--space-2);
+    border-radius: var(--radius);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 
     &:hover {
       color: hsl(var(--primary));
+      background: hsl(var(--accent));
+    }
+
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
     }
   }
 
@@ -86,24 +98,15 @@
     text-align: center;
 
     p {
-      font-size: var(--font-sm);
+      font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
       color: hsl(var(--muted-foreground));
-      margin: var(--space-1) 0;
+      margin: clamp(0.25rem, 1vw, 0.5rem) 0;
+      line-height: 1.5;
     }
   }
 
   .built-with {
-    font-size: var(--font-xs);
+    font-size: clamp(0.75rem, 1.5vw, 0.8125rem);
     opacity: 0.8;
-  }
-
-  @include mobile {
-    .app-footer {
-      padding: var(--space-8) var(--space-4);
-    }
-
-    .social-links {
-      gap: var(--space-4);
-    }
   }
 </style>

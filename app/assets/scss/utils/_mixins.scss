@@ -2,7 +2,38 @@
  * SCSS Mixins
  */
 
-// Responsive breakpoints
+// Mobile-first responsive breakpoints
+@mixin sm {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: 1536px) {
+    @content;
+  }
+}
+
+// Legacy breakpoints (deprecated, mantener por compatibilidad)
 @mixin mobile {
   @media (max-width: 639px) {
     @content;
@@ -10,7 +41,7 @@
 }
 
 @mixin tablet {
-  @media (min-width: 640px) and (max-width: 1023px) {
+  @media (max-width: 1023px) {
     @content;
   }
 }
@@ -23,6 +54,25 @@
 
 @mixin large-desktop {
   @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// Max-width breakpoints (for specific cases)
+@mixin max-sm {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin max-md {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin max-lg {
+  @media (max-width: 1023px) {
     @content;
   }
 }
@@ -104,5 +154,74 @@
   &:focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;
+  }
+}
+
+// Container queries
+@mixin container($name: '') {
+  container-type: inline-size;
+  @if $name != '' {
+    container-name: $name;
+  }
+}
+
+@mixin container-query($min-width) {
+  @container (min-width: #{$min-width}) {
+    @content;
+  }
+}
+
+// Touch targets (minimum 44x44px)
+@mixin touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Fluid typography helper
+@mixin fluid-text($min-size, $max-size, $min-width: 320px, $max-width: 1280px) {
+  font-size: clamp(
+    #{$min-size},
+    calc(
+      #{$min-size} + (#{strip-unit($max-size)} - #{strip-unit($min-size)}) *
+        (
+          (100vw - #{$min-width}) /
+            (#{strip-unit($max-width)} - #{strip-unit($min-width)})
+        )
+    ),
+    #{$max-size}
+  );
+}
+
+// Responsive spacing
+@mixin fluid-space($property, $min-size, $max-size) {
+  #{$property}: clamp(
+    #{$min-size},
+    calc(
+      #{$min-size} + (#{strip-unit($max-size)} - #{strip-unit($min-size)}) *
+        ((100vw - 20rem) / 60)
+    ),
+    #{$max-size}
+  );
+}
+
+// Aspect ratio (fallback for older browsers)
+@mixin aspect-ratio($width, $height) {
+  aspect-ratio: $width / $height;
+
+  @supports not (aspect-ratio: 1) {
+    &::before {
+      content: '';
+      float: left;
+      padding-top: calc(100% * (#{$height} / #{$width}));
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
   }
 }

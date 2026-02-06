@@ -10,7 +10,8 @@
     "about": "About",
     "skills": "Skills",
     "contact": "Contact",
-    "menu": "Menu"
+    "menu": "Menu",
+    "settings": "Settings"
   },
   "hero": {
     "greeting": "Hi, I'm Juan Carlos",

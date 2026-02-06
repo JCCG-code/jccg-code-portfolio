@@ -41,6 +41,14 @@
             {{ t(`nav.${section.id}`) }}
           </a>
         </nav>
+
+        <div class="mobile-controls">
+          <div class="mobile-controls-label">{{ t('nav.settings') }}</div>
+          <div class="mobile-controls-buttons">
+            <ThemeToggle />
+            <LocaleToggle />
+          </div>
+        </div>
       </div>
     </transition>
   </header>
@@ -106,29 +114,30 @@
   .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--space-4);
+    padding: 0 clamp(1rem, 4vw, 2rem);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-8);
+    gap: clamp(1rem, 3vw, 2rem);
   }
 
   .brand {
     font-family: var(--font-mono);
-    font-size: var(--font-lg);
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
     font-weight: 700;
     color: hsl(var(--foreground));
     letter-spacing: -0.02em;
+    flex-shrink: 0;
   }
 
   .desktop-nav {
-    display: flex;
-    gap: var(--space-6);
+    display: none;
+    gap: clamp(1rem, 2vw, 1.5rem);
     flex: 1;
     justify-content: center;
 
-    @include tablet {
-      display: none;
+    @include lg {
+      display: flex;
     }
   }
 
@@ -140,7 +149,8 @@
     cursor: pointer;
     position: relative;
     transition: color var(--transition-fast);
-    padding: var(--space-2) 0;
+    padding: var(--space-2) var(--space-1);
+    white-space: nowrap;
 
     &:hover {
       color: hsl(var(--foreground));
@@ -159,23 +169,48 @@
       height: 2px;
       background: hsl(var(--primary));
     }
+
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 4px;
+      border-radius: var(--radius);
+    }
   }
 
   .controls {
-    display: flex;
+    display: none;
     gap: var(--space-2);
     align-items: center;
+
+    @include lg {
+      display: flex;
+    }
   }
 
   .mobile-menu-toggle {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
     padding: var(--space-2);
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: var(--radius);
+    transition: background var(--transition-fast);
 
-    @include tablet {
-      display: block;
+    &:hover {
+      background: hsl(var(--accent));
+    }
+
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
+    }
+
+    @include lg {
+      display: none;
     }
   }
 
@@ -221,15 +256,26 @@
   }
 
   .mobile-menu {
-    background: hsl(var(--card));
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: hsl(var(--card) / 0.98);
+    backdrop-filter: blur(12px);
     border-top: 1px solid hsl(var(--border));
+    border-bottom: 1px solid hsl(var(--border));
     padding: var(--space-4) 0;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
     nav {
       display: flex;
       flex-direction: column;
-      gap: var(--space-2);
-      padding: 0 var(--space-4);
+      gap: var(--space-1);
+      padding: 0 clamp(1rem, 4vw, 2rem);
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     a {
@@ -241,13 +287,49 @@
       padding: var(--space-3) var(--space-4);
       border-radius: var(--radius);
       transition: all var(--transition-fast);
+      min-height: 48px;
+      display: flex;
+      align-items: center;
 
       &:hover,
       &.active {
         background: hsl(var(--accent));
         color: hsl(var(--primary));
       }
+
+      &:focus-visible {
+        outline: 2px solid hsl(var(--ring));
+        outline-offset: 2px;
+      }
     }
+  }
+
+  .mobile-controls {
+    padding: var(--space-4) clamp(1rem, 4vw, 2rem) 0;
+    margin-top: var(--space-4);
+    border-top: 1px solid hsl(var(--border));
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobile-controls-label {
+    font-family: var(--font-mono);
+    font-size: var(--font-xs);
+    font-weight: 600;
+    color: hsl(var(--muted-foreground));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-3);
+    padding: 0 var(--space-4);
+  }
+
+  .mobile-controls-buttons {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2);
   }
 
   .slide-down-enter-active,

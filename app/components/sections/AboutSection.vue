@@ -54,7 +54,7 @@
 
 <style scoped>
   .about-section {
-    padding: 6rem 1rem;
+    padding: clamp(4rem, 12vw, 8rem) clamp(1rem, 4vw, 2rem);
     background: hsl(var(--card));
   }
 
@@ -64,21 +64,32 @@
   }
 
   h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.875rem, 6vw, 3rem);
     font-weight: 700;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
     color: hsl(var(--foreground));
+    letter-spacing: -0.02em;
   }
 
   .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 3rem);
+    margin-bottom: clamp(2rem, 5vw, 3rem);
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+
+    @include md {
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(2rem, 4vw, 3rem);
+    }
+
+    @include lg {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(2.5rem, 5vw, 3.5rem);
+    }
   }
 
   .visible .about-grid {
@@ -87,16 +98,20 @@
   }
 
   .story p {
-    font-size: 1.125rem;
-    line-height: 1.8;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.75;
     color: hsl(var(--muted-foreground));
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .strengths h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
     color: hsl(var(--foreground));
   }
 
@@ -104,14 +119,16 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.75rem, 2vw, 1rem);
   }
 
   .strengths li {
-    font-size: 1rem;
+    font-size: clamp(0.9375rem, 2vw, 1rem);
     line-height: 1.6;
     color: hsl(var(--muted-foreground));
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
+    padding-left: clamp(1.25rem, 3vw, 1.5rem);
     position: relative;
   }
 
@@ -121,36 +138,46 @@
     left: 0;
     color: hsl(var(--primary));
     font-weight: 700;
+    font-size: 1.1em;
   }
 
   .cv-download {
     text-align: center;
+    margin-top: clamp(1rem, 3vw, 2rem);
   }
 
   .download-cv {
-    display: inline-block;
-    padding: 1rem 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.875rem, 2.5vw, 1rem) clamp(1.5rem, 4vw, 2rem);
     background: hsl(var(--primary));
     color: white;
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 2vw, 1.125rem);
     font-weight: 600;
     text-decoration: none;
-    border-radius: 0.5rem;
-    transition: all 0.2s ease;
-  }
+    border-radius: var(--radius);
+    transition: all var(--transition-base);
+    min-height: 48px;
 
-  .download-cv:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  @media (max-width: 640px) {
-    .about-section {
-      padding: 4rem 1rem;
+    @include max-sm {
+      width: 100%;
+      min-height: 52px;
     }
 
-    .about-grid {
-      gap: 2rem;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      background: hsl(var(--primary) / 0.9);
+    }
+
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(0);
     }
   }
 </style>

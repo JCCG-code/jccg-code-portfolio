@@ -21,3 +21,25 @@
 @function darken-hsl($color, $amount) {
   @return adjust-color($color, $lightness: -$amount);
 }
+
+// Strip unit from value
+@function strip-unit($value) {
+  @return calc($value / ($value * 0 + 1));
+}
+
+// Fluid value calculator
+@function fluid($min-size, $max-size, $min-width: 320px, $max-width: 1280px) {
+  $slope: calc(
+    (#{strip-unit($max-size)} - #{strip-unit($min-size)}) /
+      (#{strip-unit($max-width)} - #{strip-unit($min-width)})
+  );
+  $y-intersection: calc(
+    #{strip-unit($min-size)} - (#{strip-unit($min-width)} * $slope)
+  );
+
+  @return clamp(
+    #{$min-size},
+    calc(#{$y-intersection * 1rem} + #{$slope * 100}vw),
+    #{$max-size}
+  );
+}

@@ -40,7 +40,7 @@
 
 <style scoped>
   .projects-section {
-    padding: 6rem 1rem;
+    padding: clamp(4rem, 12vw, 8rem) clamp(1rem, 4vw, 2rem);
     background: hsl(var(--background));
   }
 
@@ -50,49 +50,64 @@
   }
 
   h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.875rem, 6vw, 3rem);
     font-weight: 700;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
     color: hsl(var(--foreground));
+    letter-spacing: -0.02em;
   }
 
   .subtitle {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     text-align: center;
     color: hsl(var(--muted-foreground));
-    margin-bottom: 4rem;
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
   }
 
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 4vw, 2rem);
+
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1.25rem, 3vw, 1.75rem);
+    }
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    @include xl {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
   }
 
   .project-card-item {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
 
   .visible .project-card-item {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.5s ease-out forwards;
   }
 
   @keyframes fadeInUp {
     to {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .projects-section {
-      padding: 4rem 1rem;
-    }
-
-    .project-grid {
-      gap: 1.5rem;
     }
   }
 </style>

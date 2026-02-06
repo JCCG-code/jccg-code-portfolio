@@ -212,11 +212,13 @@
 
 <style scoped>
   .case-study {
-    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
   }
 
   .cs-hero {
-    margin-top: 60px;
+    margin-top: clamp(60px, 12vw, 80px);
     width: 100%;
     max-height: 60vh;
     overflow: hidden;
@@ -227,50 +229,58 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    aspect-ratio: 16/9;
   }
 
   section {
-    padding: 4rem 1rem;
+    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 4vw, 2rem);
   }
 
   .container {
     max-width: 900px;
     margin: 0 auto;
+    width: 100%;
   }
 
   h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.875rem, 6vw, 3rem);
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
     color: hsl(var(--foreground));
+    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
 
   h2 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1.25rem, 3vw, 2rem);
     color: hsl(var(--foreground));
+    letter-spacing: -0.01em;
+    line-height: 1.3;
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
     color: hsl(var(--foreground));
+    line-height: 1.4;
   }
 
   h4 {
-    font-size: 1.25rem;
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: clamp(0.625rem, 1.5vw, 0.75rem);
     color: hsl(var(--foreground));
+    line-height: 1.4;
   }
 
   p {
-    font-size: 1.125rem;
-    line-height: 1.8;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.75;
     color: hsl(var(--muted-foreground));
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.875rem, 2vw, 1rem);
   }
 
   .cs-overview {
@@ -278,30 +288,34 @@
   }
 
   .lead {
-    font-size: 1.375rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    line-height: 1.6;
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
     color: hsl(var(--foreground));
   }
 
   .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    padding: clamp(1.25rem, 3vw, 1.5rem);
     background: hsl(var(--background));
-    border-radius: 0.5rem;
+    border-radius: var(--radius-lg);
     border: 1px solid hsl(var(--border));
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
   }
 
   .meta-item {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: clamp(0.375rem, 1vw, 0.5rem);
   }
 
   .meta-item strong {
-    font-size: 0.875rem;
+    font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
     font-weight: 600;
     color: hsl(var(--muted-foreground));
     text-transform: uppercase;
@@ -309,8 +323,9 @@
   }
 
   .meta-item span {
-    font-size: 1rem;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
     color: hsl(var(--foreground));
+    line-height: 1.5;
   }
 
   .cs-challenge {
@@ -321,13 +336,17 @@
   .cs-learnings ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.75rem, 2vw, 1rem);
   }
 
   .cs-contributions li,
   .cs-learnings li {
-    padding-left: 2rem;
-    margin-bottom: 1rem;
+    padding-left: clamp(1.5rem, 3vw, 2rem);
     position: relative;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
   }
 
   .cs-contributions li::before {
@@ -336,7 +355,7 @@
     left: 0;
     color: hsl(var(--primary));
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
   }
 
   .cs-learnings li::before {
@@ -345,7 +364,7 @@
     left: 0;
     color: hsl(var(--primary));
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
   }
 
   .cs-process {
@@ -355,13 +374,15 @@
   .process-steps {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: clamp(2rem, 5vw, 3rem);
   }
 
   .process-step img {
     width: 100%;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin-top: clamp(0.875rem, 2vw, 1rem);
+    border: 1px solid hsl(var(--border));
   }
 
   .cs-decisions {
@@ -370,15 +391,23 @@
 
   .decision-cards {
     display: grid;
-    gap: 1.5rem;
+    gap: clamp(1rem, 3vw, 1.5rem);
   }
 
   .decision-card {
-    padding: 1.5rem;
+    padding: clamp(1.25rem, 3vw, 1.5rem);
     background: hsl(var(--background));
     border: 1px solid hsl(var(--border));
-    border-radius: 0.5rem;
+    border-radius: var(--radius-lg);
     border-left: 4px solid hsl(var(--primary));
+    transition: all var(--transition-base);
+
+    @media (min-width: 640px) {
+      &:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+    }
   }
 
   .cs-results {
@@ -387,8 +416,17 @@
 
   .metrics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 3vw, 1.5rem);
+
+    @media (min-width: 480px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: clamp(1.5rem, 3vw, 2rem);
+    }
   }
 
   .metric {
@@ -396,22 +434,33 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    padding: clamp(1.5rem, 4vw, 2rem);
     background: hsl(var(--card));
-    border-radius: 0.5rem;
+    border-radius: var(--radius-lg);
     border: 1px solid hsl(var(--border));
+    transition: all var(--transition-base);
+
+    @media (min-width: 640px) {
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-color: hsl(var(--primary) / 0.3);
+      }
+    }
   }
 
   .metric .value {
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 3rem);
     font-weight: 700;
     color: hsl(var(--primary));
-    margin-bottom: 0.5rem;
+    margin-bottom: clamp(0.375rem, 1vw, 0.5rem);
+    line-height: 1;
   }
 
   .metric .label {
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
     color: hsl(var(--muted-foreground));
+    line-height: 1.4;
   }
 
   .cs-links {
@@ -420,42 +469,74 @@
 
   .link-buttons {
     display: flex;
-    gap: 1rem;
+    gap: clamp(0.75rem, 2vw, 1rem);
     justify-content: center;
     flex-wrap: wrap;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
   }
 
   .btn {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
+    padding: clamp(0.875rem, 2.5vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1rem, 2vw, 1.125rem);
     font-weight: 600;
     text-decoration: none;
-    border-radius: 0.5rem;
-    transition: all 0.2s ease;
-    min-width: 160px;
+    border-radius: var(--radius);
+    transition: all var(--transition-base);
+    min-width: 140px;
+    min-height: 48px;
     text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      min-height: 52px;
+    }
+
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
+    }
   }
 
   .btn-primary {
     background: hsl(var(--primary));
     color: white;
-  }
 
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    @media (min-width: 640px) {
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background: hsl(var(--primary) / 0.9);
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
   }
 
   .btn-secondary {
     background: transparent;
     color: hsl(var(--foreground));
     border: 2px solid hsl(var(--border));
-  }
 
-  .btn-secondary:hover {
-    border-color: hsl(var(--primary));
-    color: hsl(var(--primary));
-    transform: translateY(-2px);
+    @media (min-width: 640px) {
+      &:hover {
+        border-color: hsl(var(--primary));
+        color: hsl(var(--primary));
+        transform: translateY(-2px);
+        background: hsl(var(--primary) / 0.05);
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
   }
 
   .cs-navigation {
@@ -467,40 +548,37 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: clamp(0.875rem, 2vw, 1rem);
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 
   .back-link,
   .next-link {
-    font-size: 1rem;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
     font-weight: 600;
     color: hsl(var(--foreground));
     text-decoration: none;
-    transition: color 0.2s ease;
-  }
+    transition: all var(--transition-fast);
+    padding: var(--space-2);
+    border-radius: var(--radius);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 
-  .back-link:hover,
-  .next-link:hover {
-    color: hsl(var(--primary));
-  }
-
-  @media (max-width: 640px) {
-    section {
-      padding: 3rem 1rem;
+    @media (min-width: 640px) {
+      &:hover {
+        color: hsl(var(--primary));
+        background: hsl(var(--accent));
+      }
     }
 
-    .meta {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .metrics-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .cs-navigation .container {
-      flex-direction: column;
-      align-items: flex-start;
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
     }
   }
 </style>
