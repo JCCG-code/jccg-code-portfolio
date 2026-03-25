@@ -1,9 +1,21 @@
 <template>
-  <header :class="['app-header', { scrolled: isScrolled, hidden: isHidden }]">
+  <header :class="['app-header', { scrolled: isScrolled, hidden: isHidden, compact: isProjectPage }]">
     <div class="header-container">
-      <div class="brand">JCCG Code</div>
+      <NuxtLink
+        v-if="isProjectPage"
+        to="/#projects"
+        class="back-btn">
+        ← {{ t('case_study.back') }}
+      </NuxtLink>
+      <div
+        v-else
+        class="brand">
+        JCCG Code
+      </div>
 
-      <nav class="desktop-nav">
+      <nav
+        v-if="!isProjectPage"
+        class="desktop-nav">
         <a
           v-for="section in sections"
           :key="section.id"
@@ -19,6 +31,7 @@
       </div>
 
       <button
+        v-if="!isProjectPage"
         class="mobile-menu-toggle"
         :aria-label="t('nav.menu')"
         @click="toggleMenu">
@@ -30,7 +43,7 @@
 
     <transition name="slide-down">
       <div
-        v-if="menuOpen"
+        v-if="menuOpen && !isProjectPage"
         class="mobile-menu">
         <nav>
           <a
@@ -58,6 +71,8 @@
   const { t } = useAppLocale()
   const { isScrolled, isHidden, activeSection, scrollToSection } =
     useScrollNavigation()
+  const route = useRoute()
+  const isProjectPage = computed(() => route.path.startsWith('/projects/'))
 
   const menuOpen = ref(false)
 
@@ -130,6 +145,33 @@
     flex-shrink: 0;
   }
 
+  .back-btn {
+    font-family: var(--font-mono);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: hsl(var(--muted-foreground));
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: color var(--transition-fast);
+    padding: var(--space-2) var(--space-1);
+
+    &:hover {
+      color: hsl(var(--foreground));
+    }
+
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 4px;
+      border-radius: var(--radius);
+    }
+  }
+
+  .app-header.compact {
+    background: hsl(var(--card) / 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
   .desktop-nav {
     display: none;
     gap: clamp(1rem, 2vw, 1.5rem);
@@ -199,10 +241,6 @@
     min-height: 44px;
     border-radius: var(--radius);
     transition: background var(--transition-fast);
-
-    &:hover {
-      background: hsl(var(--accent));
-    }
 
     &:focus-visible {
       outline: 2px solid hsl(var(--ring));

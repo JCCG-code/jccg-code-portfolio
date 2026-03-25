@@ -92,21 +92,6 @@
       </div>
     </section>
 
-    <section class="cs-results">
-      <div class="container">
-        <h2>{{ t('case_study.results') }}</h2>
-        <div class="metrics-grid">
-          <div
-            v-for="(metric, index) in project.results"
-            :key="index"
-            class="metric">
-            <span class="value">{{ metric.value }}</span>
-            <span class="label">{{ metric.label }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section
       v-if="project.learnings && project.learnings.length > 0"
       class="cs-learnings">
@@ -210,7 +195,9 @@
   })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @use '~/assets/scss/utils/mixins' as *;
+
   .case-study {
     min-height: 100dvh;
     display: flex;
@@ -303,7 +290,7 @@
     border-radius: var(--radius-lg);
     border: 1px solid hsl(var(--border));
 
-    @media (min-width: 640px) {
+    @include sm {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
   }
@@ -402,65 +389,12 @@
     border-left: 4px solid hsl(var(--primary));
     transition: all var(--transition-base);
 
-    @media (min-width: 640px) {
+    @include sm {
       &:hover {
         transform: translateX(4px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       }
     }
-  }
-
-  .cs-results {
-    background: hsl(var(--background));
-  }
-
-  .metrics-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: clamp(1rem, 3vw, 1.5rem);
-
-    @media (min-width: 480px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: clamp(1.5rem, 3vw, 2rem);
-    }
-  }
-
-  .metric {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: clamp(1.5rem, 4vw, 2rem);
-    background: hsl(var(--card));
-    border-radius: var(--radius-lg);
-    border: 1px solid hsl(var(--border));
-    transition: all var(--transition-base);
-
-    @media (min-width: 640px) {
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        border-color: hsl(var(--primary) / 0.3);
-      }
-    }
-  }
-
-  .metric .value {
-    font-size: clamp(2rem, 6vw, 3rem);
-    font-weight: 700;
-    color: hsl(var(--primary));
-    margin-bottom: clamp(0.375rem, 1vw, 0.5rem);
-    line-height: 1;
-  }
-
-  .metric .label {
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    color: hsl(var(--muted-foreground));
-    line-height: 1.4;
   }
 
   .cs-links {
@@ -507,7 +441,7 @@
     background: hsl(var(--primary));
     color: white;
 
-    @media (min-width: 640px) {
+    @include sm {
       &:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -525,7 +459,7 @@
     color: hsl(var(--foreground));
     border: 2px solid hsl(var(--border));
 
-    @media (min-width: 640px) {
+    @include sm {
       &:hover {
         border-color: hsl(var(--primary));
         color: hsl(var(--primary));
@@ -550,7 +484,7 @@
     flex-wrap: wrap;
     gap: clamp(0.875rem, 2vw, 1rem);
 
-    @media (max-width: 640px) {
+    @include max-sm {
       flex-direction: column;
       align-items: stretch;
     }
@@ -569,7 +503,7 @@
     display: inline-flex;
     align-items: center;
 
-    @media (min-width: 640px) {
+    @include sm {
       &:hover {
         color: hsl(var(--primary));
         background: hsl(var(--accent));

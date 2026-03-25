@@ -52,7 +52,9 @@
   })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @use '~/assets/scss/utils/mixins' as *;
+
   .about-section {
     padding: clamp(4rem, 12vw, 8rem) clamp(1rem, 4vw, 2rem);
     background: hsl(var(--card));

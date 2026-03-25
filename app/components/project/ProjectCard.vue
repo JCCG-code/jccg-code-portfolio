@@ -12,25 +12,6 @@
 
     <div class="content">
       <h3 class="title">{{ localizedProject.title }}</h3>
-      <p class="one-liner">{{ localizedProject.oneLiner }}</p>
-
-      <!-- Progress badges for metrics -->
-      <div
-        v-if="project.metrics && project.metrics.length > 0"
-        class="metric-badges">
-        <div
-          v-for="metric in project.metrics"
-          :key="metric.label"
-          class="metric-badge">
-          <span class="badge-label">{{ metric.label }}</span>
-          <div class="badge-progress">
-            <span class="badge-value">{{ metric.value }}</span>
-            <div
-              class="badge-bar"
-              :style="{ width: getProgressWidth(metric.value) }"></div>
-          </div>
-        </div>
-      </div>
 
       <!-- Tech stack -->
       <div class="tech-stack">
@@ -84,17 +65,14 @@
     slug: string
     thumbnail: string
     techStack: string[]
-    metrics?: Array<{ value: string; label: string }>
     liveUrl?: string
     githubUrl?: string
     en: {
       title: string
-      oneLiner: string
       [key: string]: unknown
     }
     es: {
       title: string
-      oneLiner: string
       [key: string]: unknown
     }
     [key: string]: unknown
@@ -116,18 +94,6 @@
     router.push(`/projects/${props.project.slug}`)
   }
 
-  /**
-   * Convert metric value to progress width
-   * Extracts percentage or creates visual representation
-   */
-  const getProgressWidth = (value: string): string => {
-    const match = value.match(/(\d+)%/)
-    if (match) {
-      return match[1] + '%'
-    }
-    // For non-percentage values, return a visual indicator
-    return '75%'
-  }
 </script>
 
 <style lang="scss" scoped>
@@ -203,68 +169,6 @@
     color: hsl(var(--foreground));
     margin: 0;
     word-break: break-word;
-  }
-
-  .one-liner {
-    font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
-    line-height: 1.6;
-    color: hsl(var(--muted-foreground));
-    margin: 0;
-  }
-
-  .metric-badges {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(0.625rem, 2vw, 0.75rem);
-    padding: clamp(0.875rem, 2.5vw, 1rem);
-    background: hsl(var(--muted) / 0.3);
-    border: 1px solid hsl(var(--border));
-    border-radius: var(--radius);
-  }
-
-  .metric-badge {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .badge-label {
-    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
-    font-family: var(--font-mono);
-    color: hsl(var(--muted-foreground));
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .badge-progress {
-    position: relative;
-    height: clamp(20px, 3vw, 24px);
-    background: hsl(var(--background));
-    border: 1px solid hsl(var(--border));
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-
-  .badge-value {
-    position: absolute;
-    top: 50%;
-    left: var(--space-2);
-    transform: translateY(-50%);
-    font-family: var(--font-mono);
-    font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
-    font-weight: 700;
-    color: hsl(var(--foreground));
-    z-index: 2;
-  }
-
-  .badge-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: hsl(var(--primary) / 0.15);
-    border-right: 2px solid hsl(var(--primary));
-    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .tech-stack {

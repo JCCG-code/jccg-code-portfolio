@@ -5,16 +5,6 @@
     "thumbnail": "https://picsum.photos/seed/ecommerce-thumb/800/600",
     "heroImage": "https://picsum.photos/seed/ecommerce-hero/1920/1080",
     "techStack": ["Vue 3", "Nuxt 3", "TypeScript", "PostgreSQL", "Redis"],
-    "metrics": [
-      {
-        "value": "65%",
-        "label": "faster page load"
-      },
-      {
-        "value": "23%",
-        "label": "increase in conversions"
-      }
-    ],
     "liveUrl": "https://example.com",
     "githubUrl": "https://github.com/yourusername/project",
     "featured": true,
@@ -22,7 +12,6 @@
     "status": "published",
     "en": {
       "title": "E-Commerce Performance Optimization",
-      "oneLiner": "Reduced page load time from 3.2s to 1.1s, increasing conversion rate by 23%",
       "overview": "Rebuilt the frontend of a high-traffic e-commerce platform, implementing advanced performance optimizations and modern best practices. The project resulted in significantly improved user experience and measurable business impact.",
       "challenge": "The existing e-commerce platform suffered from slow page loads (3.2s average), poor mobile performance, and declining conversion rates. The legacy codebase used outdated patterns and lacked proper code splitting.",
       "role": "Lead Frontend Developer",
@@ -66,24 +55,6 @@
           "rationale": "Opted for incremental migration rather than big-bang rewrite to minimize risk and maintain business continuity. Each feature was migrated and tested independently."
         }
       ],
-      "results": [
-        {
-          "value": "65%",
-          "label": "reduction in page load time"
-        },
-        {
-          "value": "23%",
-          "label": "increase in conversion rate"
-        },
-        {
-          "value": "95+",
-          "label": "Lighthouse performance score"
-        },
-        {
-          "value": "50%",
-          "label": "reduction in bounce rate"
-        }
-      ],
       "learnings": [
         "Performance is a feature - even small improvements have measurable business impact",
         "Progressive enhancement ensures reliability while modern features enhance experience",
@@ -93,7 +64,6 @@
     },
     "es": {
       "title": "Optimización de Rendimiento E-Commerce",
-      "oneLiner": "Reduje el tiempo de carga de 3.2s a 1.1s, aumentando la tasa de conversión en 23%",
       "overview": "Reconstruí el frontend de una plataforma de e-commerce de alto tráfico, implementando optimizaciones avanzadas de rendimiento y mejores prácticas modernas. El proyecto resultó en una mejora significativa de la experiencia de usuario e impacto medible en el negocio.",
       "challenge": "La plataforma de e-commerce existente sufría de cargas lentas (3.2s promedio), bajo rendimiento móvil y tasas de conversión en declive. El código legacy usaba patrones obsoletos y carecía de code splitting apropiado.",
       "role": "Desarrollador Frontend Principal",
@@ -137,24 +107,6 @@
           "rationale": "Opté por migración incremental en lugar de reescritura completa para minimizar riesgo y mantener continuidad del negocio. Cada feature fue migrada y testeada independientemente."
         }
       ],
-      "results": [
-        {
-          "value": "65%",
-          "label": "reducción en tiempo de carga"
-        },
-        {
-          "value": "23%",
-          "label": "aumento en tasa de conversión"
-        },
-        {
-          "value": "95+",
-          "label": "score de rendimiento Lighthouse"
-        },
-        {
-          "value": "50%",
-          "label": "reducción en bounce rate"
-        }
-      ],
       "learnings": [
         "El rendimiento es una feature - incluso pequeñas mejoras tienen impacto medible en el negocio",
         "Progressive enhancement asegura confiabilidad mientras features modernas mejoran la experiencia",
@@ -169,12 +121,6 @@
     "thumbnail": "https://picsum.photos/seed/taskmanager-thumb/800/600",
     "heroImage": "https://picsum.photos/seed/taskmanager-hero/1920/1080",
     "techStack": ["Vue 3", "Nuxt 4", "TypeScript", "PostgreSQL", "WebSockets"],
-    "metrics": [
-      {
-        "value": "10 hrs/week",
-        "label": "saved per team"
-      }
-    ],
     "liveUrl": "https://example.com/taskmanager",
     "githubUrl": "https://github.com/yourusername/taskmanager",
     "featured": true,
@@ -182,7 +128,6 @@
     "status": "published",
     "en": {
       "title": "Collaborative Task Manager",
-      "oneLiner": "Built real-time collaboration tool saving teams 10 hours/week on project coordination",
       "overview": "Developed a modern task management application with real-time collaboration features. The platform enables teams to coordinate projects efficiently with live updates, assignments, and progress tracking.",
       "challenge": "Teams were using disparate tools for project management, leading to fragmented communication and duplicated effort. There was a need for a unified platform with real-time updates that could scale to support multiple concurrent users.",
       "role": "Full-Stack Developer",
@@ -218,20 +163,6 @@
           "rationale": "Implemented optimistic updates to provide immediate feedback while operations complete in background. This creates responsive feel even with network latency."
         }
       ],
-      "results": [
-        {
-          "value": "10 hrs/week",
-          "label": "saved per team on average"
-        },
-        {
-          "value": "40%",
-          "label": "reduction in missed deadlines"
-        },
-        {
-          "value": "500+",
-          "label": "active users"
-        }
-      ],
       "learnings": [
         "Real-time features dramatically improve collaboration experience",
         "Optimistic updates are crucial for perceived performance",
@@ -240,7 +171,6 @@
     },
     "es": {
       "title": "Gestor de Tareas Colaborativo",
-      "oneLiner": "Construí herramienta de colaboración en tiempo real que ahorra 10 horas/semana a equipos",
       "overview": "Desarrollé una aplicación moderna de gestión de tareas con features de colaboración en tiempo real. La plataforma permite a equipos coordinar proyectos eficientemente con actualizaciones en vivo, asignaciones y seguimiento de progreso.",
       "challenge": "Los equipos usaban herramientas dispares para gestión de proyectos, llevando a comunicación fragmentada y esfuerzo duplicado. Había necesidad de una plataforma unificada con actualizaciones en tiempo real que pudiera escalar para soportar múltiples usuarios concurrentes.",
       "role": "Desarrollador Full-Stack",
@@ -274,20 +204,6 @@
         {
           "title": "Actualizaciones Optimistas de UI",
           "rationale": "Implementé actualizaciones optimistas para proveer feedback inmediato mientras operaciones se completan en background. Esto crea sensación responsiva incluso con latencia de red."
-        }
-      ],
-      "results": [
-        {
-          "value": "10 hrs/semana",
-          "label": "ahorradas por equipo en promedio"
-        },
-        {
-          "value": "40%",
-          "label": "reducción en deadlines perdidos"
-        },
-        {
-          "value": "500+",
-          "label": "usuarios activos"
         }
       ],
       "learnings": [

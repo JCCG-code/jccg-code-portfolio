@@ -3,16 +3,6 @@
  */
 
 /**
- * Metric representing measurable impact
- */
-export interface Metric {
-  /** Metric value (e.g., "40%", "10 hours/week") */
-  value: string
-  /** Metric description (e.g., "increase in conversions") */
-  label: string
-}
-
-/**
  * Process step in project development
  */
 export interface ProcessStep {
@@ -40,8 +30,6 @@ export interface KeyDecision {
 export interface ProjectContent {
   /** Project title */
   title: string
-  /** One-line impact statement */
-  oneLiner: string
   /** Project overview (2-3 sentences) */
   overview: string
   /** Challenge description */
@@ -56,8 +44,6 @@ export interface ProjectContent {
   processSteps: ProcessStep[]
   /** Key technical decisions made */
   keyDecisions: KeyDecision[]
-  /** Result metrics */
-  results: Metric[]
   /** Optional learnings */
   learnings?: string[]
 }
@@ -76,8 +62,6 @@ export interface Project {
   heroImage: string
   /** Tech stack used */
   techStack: string[]
-  /** Optional metrics for card display */
-  metrics?: Metric[]
   /** Live project URL */
   liveUrl?: string
   /** GitHub repository URL */

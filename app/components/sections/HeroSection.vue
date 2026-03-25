@@ -35,16 +35,6 @@
           </div>
         </div>
 
-        <div class="quick-metrics">
-          <div class="metric">
-            <span class="metric-value">2+</span>
-            <span class="metric-label">Years Experience</span>
-          </div>
-          <div class="metric">
-            <span class="metric-value">10+</span>
-            <span class="metric-label">Projects Delivered</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -240,38 +230,4 @@
     white-space: nowrap;
   }
 
-  .quick-metrics {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(1rem, 3vw, 1.5rem);
-    padding-top: clamp(1rem, 3vw, 1.5rem);
-    border-top: 1px solid hsl(var(--border));
-
-    @include max-sm {
-      gap: 1.25rem;
-    }
-  }
-
-  .metric {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-    min-width: 0;
-  }
-
-  .metric-value {
-    font-family: var(--font-mono);
-    font-size: clamp(1.75rem, 5vw, 2.25rem);
-    font-weight: 700;
-    color: hsl(var(--primary));
-    line-height: 1;
-  }
-
-  .metric-label {
-    font-size: clamp(0.7rem, 1.5vw, 0.75rem);
-    color: hsl(var(--muted-foreground));
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    line-height: 1.3;
-  }
 </style>

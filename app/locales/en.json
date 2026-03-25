@@ -22,7 +22,7 @@
   },
   "projects": {
     "title": "Selected Work",
-    "subtitle": "Projects with real impact",
+    "subtitle": "Building solutions for real people",
     "view_case_study": "View Case Study",
     "live_demo": "Live Demo",
     "github": "View Code",
@@ -37,7 +37,7 @@
     "intro": "I started coding because I wanted to build things that solve real problems. What began as curiosity turned into a passion for crafting web applications that are both powerful and delightful to use.",
     "journey": "Over the years, I've worked on everything from high-traffic e-commerce platforms to real-time collaboration tools. I specialize in the Vue ecosystem and love working on performance optimization and user experience.",
     "focus": "Right now, I'm focused on building modern web applications with Nuxt 4, TypeScript, and PostgreSQL. I'm particularly interested in performance optimization, developer experience, and creating tools that genuinely improve people's workflows.",
-    "strength_1": "Performance-focused development with measurable results",
+    "strength_1": "Focus on solving real problems with simple, working solutions",
     "strength_2": "Full-stack expertise from database to UI",
     "strength_3": "Strong TypeScript and modern JavaScript skills",
     "strength_4": "User-centered design and accessibility",
@@ -60,7 +60,6 @@
     "role": "My Contribution",
     "process": "How I Approached It",
     "decisions": "Technical Decisions",
-    "results": "Results",
     "learnings": "What I Learned",
     "back": "Back to Projects",
     "next": "Next Project"
